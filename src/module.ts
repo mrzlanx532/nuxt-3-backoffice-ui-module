@@ -19,7 +19,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     })
 
-    nuxt.options.css.push(resolve('./runtime/assets/scss/style.scss'))
+    nuxt.options.css.push(resolve('./runtime/assets/css/style.css'))
 
     await addComponent({
       name: 'Notification',
