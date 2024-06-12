@@ -1,3 +1,29 @@
+<script setup lang="ts">
+const dataDefault = {
+  question: 'Вы уверены?',
+  moreText: null,
+  agreeText: 'Да',
+  disagreeText: 'Нет',
+}
+
+defineProps({
+  data: {
+    type: Object,
+    default() {
+      return dataDefault
+    }
+  },
+})
+
+const onClick = () => {
+  this.$emit('modal:resolve', payload)
+}
+
+const dataLocal = computed(() => {
+  return Object.assign({}, dataDefault, this.data)
+})
+</script>
+
 <template>
   <div class="modal-confirm">
     <div class="modal-confirm__close-button-container">
@@ -11,35 +37,3 @@
     </div>
   </div>
 </template>
-<script>
-
-const dataDefault = {
-  question: 'Вы уверены?',
-  moreText: null,
-  agreeText: 'Да',
-  disagreeText: 'Нет',
-}
-
-export default {
-  name: "ModalConfirm",
-  parentClassModifier: "--small",
-  props: {
-    data: {
-      type: Object,
-      default() {
-        return dataDefault
-      }
-    },
-  },
-  computed: {
-    dataLocal() {
-      return Object.assign({}, dataDefault, this.data)
-    }
-  },
-  methods: {
-    onClick(payload) {
-      this.$emit('modal:resolve', payload)
-    },
-  }
-}
-</script>
