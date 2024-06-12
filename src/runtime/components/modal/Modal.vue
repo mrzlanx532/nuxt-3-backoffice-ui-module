@@ -34,7 +34,7 @@ watch(componentFilename, (name) => {
       /** Для playground раскомментировать */
       //return import(`@/modals/${name}.vue`)
 
-      return import(`../../../../../../modals/${name}.vue`)
+      return import(`../../../../../../../modals/${name}.vue`)
     })
 
     modalContainerClassModifier.value = dynamicComponent?.parentClassModifier
