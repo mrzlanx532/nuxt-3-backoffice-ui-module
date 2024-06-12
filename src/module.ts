@@ -1,6 +1,5 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addComponent } from '@nuxt/kit'
 
-// Module options TypeScript interface definition
 export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
@@ -8,12 +7,17 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'backoffice-ui',
     configKey: 'backofficeUI',
   },
-  // Default configuration options of the Nuxt module
   defaults: {},
-  setup(_options, _nuxt) {
+  async setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    nuxt.options.css.push(resolver.resolve('./runtime/style.css'))
+
+    await addComponent({
+      name: 'Notification',
+      filePath: resolver.resolve('./runtime/components/Notification.vue'),
+    })
+
+    addPlugin(resolver.resolve('./runtime/plugins'))
   },
 })
