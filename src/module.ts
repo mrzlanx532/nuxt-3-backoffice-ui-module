@@ -31,6 +31,6 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: resolve('./runtime/components/modal/Modal.vue'),
     })
 
-    //addPlugin(resolve('./runtime/plugin'))
+    addPlugin(resolve('./runtime/plugin'))
   },
 })
