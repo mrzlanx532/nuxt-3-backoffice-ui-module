@@ -56,7 +56,7 @@ const onClickCross = (index) => {
                 {{ notification.message }}
               </div>
               <svg class="notification__cross" @click="onClickCross(index)">
-                <use xlink:href="img/sprite.svg#cancel_cross_bold"/>
+                <use xlink:href="/img/sprite.svg#cancel_cross_bold"/>
               </svg>
             </div>
           </div>
