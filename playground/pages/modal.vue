@@ -10,6 +10,10 @@ definePageMeta({
 async function openModal() {
   await $modal.load('ExampleModal')
 }
+
+async function openConfirm() {
+  await $modal.confirm()
+}
 </script>
 
 <template>
@@ -17,6 +21,7 @@ async function openModal() {
     <div style="margin-top: 10px;"><code>Для дебага в playground: Необходимо изменить путь </code></div>
     <div style="margin-top: 10px;">
       <button type="button" @click="openModal">Открыть модалку по пути: @/modals/ExampleModal</button>
+      <button type="button" @click="openConfirm">Открыть пресет Confirm</button>
     </div>
   </div>
   <div style="height: 1200px; width: 1900px; margin-top: 10px;">

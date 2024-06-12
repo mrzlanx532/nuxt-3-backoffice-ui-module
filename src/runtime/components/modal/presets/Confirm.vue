@@ -1,26 +1,30 @@
-<script setup lang="ts">
-const dataDefault = {
+<script lang="ts">
+const initData = {
   question: 'Вы уверены?',
   moreText: null,
   agreeText: 'Да',
   disagreeText: 'Нет',
 }
+</script>
 
-defineProps({
+<script setup lang="ts">
+const emit = defineEmits(['modal:resolve'])
+
+const props = defineProps({
   data: {
     type: Object,
     default() {
-      return dataDefault
+      return initData
     }
   },
 })
 
-const onClick = () => {
-  this.$emit('modal:resolve', payload)
+const onClick = (payload) => {
+  emit('modal:resolve', payload)
 }
 
 const dataLocal = computed(() => {
-  return Object.assign({}, dataDefault, this.data)
+  return Object.assign({}, initData, props.data)
 })
 </script>
 
