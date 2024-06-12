@@ -1,12 +1,3 @@
-<script lang="ts">
-const initData = {
-  question: 'Вы уверены?',
-  moreText: null,
-  agreeText: 'Да',
-  disagreeText: 'Нет',
-}
-</script>
-
 <script setup lang="ts">
 const emit = defineEmits(['modal:resolve'])
 
@@ -14,7 +5,12 @@ const props = defineProps({
   data: {
     type: Object,
     default() {
-      return initData
+      return {
+        question: 'Вы уверены?',
+        moreText: null,
+        agreeText: 'Да',
+        disagreeText: 'Нет',
+      }
     }
   },
 })
@@ -24,7 +20,12 @@ const onClick = (payload) => {
 }
 
 const dataLocal = computed(() => {
-  return Object.assign({}, initData, props.data)
+  return Object.assign({}, {
+    question: 'Вы уверены?',
+    moreText: null,
+    agreeText: 'Да',
+    disagreeText: 'Нет',
+  }, props.data)
 })
 </script>
 
