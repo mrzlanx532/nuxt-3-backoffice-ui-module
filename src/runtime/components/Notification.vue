@@ -49,14 +49,14 @@ const onClickCross = (index) => {
             <div class="notification__wrapper">
               <div class="notification__icon">
                 <svg>
-<!--                  <use :xlink:href="'/_nuxt/public/img/sprite.svg#' + notification.type"></use>-->
+                  <use :xlink:href="'/img/sprite.svg#' + notification.type"/>
                 </svg>
               </div>
               <div class="notification__content">
                 {{ notification.message }}
               </div>
               <svg class="notification__cross" @click="onClickCross(index)">
-<!--                <use xlink:href="/_nuxt/public/img/sprite.svg#cancel_cross_bold"></use>-->
+                <use xlink:href="img/sprite.svg#cancel_cross_bold"/>
               </svg>
             </div>
           </div>
@@ -66,7 +66,6 @@ const onClickCross = (index) => {
 </template>
 
 <style scoped>
-
 .slide-enter-active {
   animation: slide-in .4s;
 }

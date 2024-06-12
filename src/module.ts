@@ -11,6 +11,14 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
+    nuxt.hook('nitro:config', async (nitroConfig) => {
+      nitroConfig.publicAssets ||= []
+      nitroConfig.publicAssets.push({
+        dir: resolver.resolve('./runtime/public'),
+        maxAge: 60 * 60 * 24 * 365
+      })
+    })
+
     nuxt.options.css.push(resolver.resolve('./runtime/assets/scss/style.scss'))
 
     await addComponent({

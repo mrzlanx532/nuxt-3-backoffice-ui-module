@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="left_double_arrow" viewBox="0 0 512 512">
+        <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/>
+    </symbol>
+    <symbol id="left_single_arrow" viewBox="0 0 320 512">
+        <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+    </symbol>
+    <symbol id="right_single_arrow" viewBox="0 0 320 512">
+        <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+    </symbol>
+    <symbol id="right_double_arrow" viewBox="0 0 512 512">
+        <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/>
+    </symbol>
+    <symbol id="more_button" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+    </symbol>
+    <symbol id="search" viewBox="0 0 32 32">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="icon-111-search" fill="currentColor">
+                <path d="M19.4271164,21.4271164 C18.0372495,22.4174803 16.3366522,23 14.5,23 C9.80557939,23 6,19.1944206 6,14.5 C6,9.80557939 9.80557939,6 14.5,6 C19.1944206,6 23,9.80557939 23,14.5 C23,16.3366522 22.4174803,18.0372495 21.4271164,19.4271164 L27.0119176,25.0119176 C27.5621186,25.5621186 27.5575313,26.4424687 27.0117185,26.9882815 L26.9882815,27.0117185 C26.4438648,27.5561352 25.5576204,27.5576204 25.0119176,27.0119176 L19.4271164,21.4271164 L19.4271164,21.4271164 Z M14.5,21 C18.0898511,21 21,18.0898511 21,14.5 C21,10.9101489 18.0898511,8 14.5,8 C10.9101489,8 8,10.9101489 8,14.5 C8,18.0898511 10.9101489,21 14.5,21 L14.5,21 Z"/>
+            </g>
+        </g>
+    </symbol>
+    <symbol id="order" viewBox="0 0 24 24" fill="none">
+        <path d="M5 7H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5 17H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cancel_cross_bold" viewBox="0 0 32 32">
+        <title/>
+        <g id="cross">
+            <line fill="none" stroke="currentColor" stroke-width="5px" stroke-linejoin="round" stroke-linecap="round" x1="7" x2="25" y1="7" y2="25"/>
+            <line fill="none" stroke="currentColor" stroke-width="5px" stroke-linejoin="round" stroke-linecap="round" x1="7" x2="25" y1="25" y2="7"/>
+        </g>
+    </symbol>
+    <symbol id="cancel_cross" viewBox="0 0 32 32">
+        <title/>
+        <g id="cross">
+            <line fill="none" stroke="currentColor" stroke-width="3px" stroke-linejoin="round" stroke-linecap="round" x1="7" x2="25" y1="7" y2="25"/>
+            <line fill="none" stroke="currentColor" stroke-width="3px" stroke-linejoin="round" stroke-linecap="round" x1="7" x2="25" y1="25" y2="7"/>
+        </g>
+    </symbol>
+    <symbol id="trash" fill="currentColor" viewBox="0 0 490 490">
+        <g>
+            <path d="M102.492,490h285.016c30.132,0,54.641-24.509,54.641-54.625V94.97h32.539V49.033H337.544V0H152.455v49.033H15.313V94.97
+		h32.539v340.404C47.852,465.491,72.36,490,102.492,490z M396.211,435.375c0,4.71-3.993,8.688-8.703,8.688H102.492
+		c-4.71,0-8.703-3.978-8.703-8.688V94.97h302.422V435.375z"/>
+            <rect x="150.568" y="171.234" width="45.938" height="191.406"/>
+            <rect x="229.688" y="171.234" width="45.938" height="191.406"/>
+            <rect x="308.807" y="171.234" width="45.938" height="191.406"/>
+        </g>
+    </symbol>
+    <symbol id="triangle" viewBox="0 0 16 16" >
+        <polygon points="8,11 3,6 13,6" fill="currentColor" />
+    </symbol>
+
+    <!-- Notification Icons -->
+    <symbol id="success" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <polyline points="22 4 12 14.01 9 11.01"/>
+    </symbol>
+    <symbol id="primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="16" x2="12" y2="12"/>
+      <line x1="12" y1="8" x2="12.01" y2="8"/>
+    </symbol>
+    <symbol id="warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="8" x2="12" y2="12"/>
+      <line x1="12" y1="16" x2="12.01" y2="16"/>
+    </symbol>
+    <symbol id="danger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="16" x2="12" y2="12"/>
+      <line x1="12" y1="8" x2="12.01" y2="8"/>
+    </symbol>
+</svg>
