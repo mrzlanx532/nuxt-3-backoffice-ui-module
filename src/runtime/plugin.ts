@@ -1,7 +1,7 @@
 import { defineNuxtPlugin } from '#imports'
 
-import NotificationManager from './plugins/notification'
-import ModalManager from './plugins/modal'
+import NotificationManager from './plugins_parts/notification'
+import ModalManager from './plugins_parts/modal'
 
 export default defineNuxtPlugin(() => {
   return {
