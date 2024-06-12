@@ -26,6 +26,11 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: resolver.resolve('./runtime/components/Notification.vue'),
     })
 
+    await addComponent({
+      name: 'Modal',
+      filePath: resolver.resolve('./runtime/components/modal/Modal.vue'),
+    })
+
     addPlugin(resolver.resolve('./runtime/plugins'))
   },
 })

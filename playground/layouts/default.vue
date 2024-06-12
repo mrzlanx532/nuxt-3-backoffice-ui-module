@@ -1,11 +1,16 @@
 <script setup>
-import { Notification } from '#components'
+import { Notification, Modal } from '#components'
 </script>
 
 <template>
   <div>
+    <div class="links">
+      <NuxtLink to="modal">Модалка</NuxtLink>
+      <NuxtLink to="notifications">Уведомления</NuxtLink>
+    </div>
     <slot />
-    <Notification />
+    <Notification /><!-- Для работы уведомлений обязательно -->
+    <Modal /><!-- Для работы модалок обязательно -->
   </div>
 </template>
 
@@ -13,5 +18,12 @@ import { Notification } from '#components'
 div {
   height: 100%;
   width: 100%;
+}
+
+.links {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 10px;
 }
 </style>
