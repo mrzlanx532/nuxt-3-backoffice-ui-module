@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const emit = defineEmits(['modal:resolve'])
 
 const props = defineProps({
