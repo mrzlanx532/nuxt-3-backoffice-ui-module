@@ -35,7 +35,7 @@
 .notification__wrapper {
   display: inline-flex;
   flex-direction: row;
-  max-width: 250px;
+  max-width: 300px;
   position: relative;
 }
 .notification__icon {
