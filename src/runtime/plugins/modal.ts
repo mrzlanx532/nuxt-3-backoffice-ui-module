@@ -1,10 +1,20 @@
+interface IConfig {
+  isPreset?: boolean,
+  isPreventClickOverlay?: boolean,
+}
+
+const defaultConfig: IConfig = {
+  isPreset: false,
+  isPreventClickOverlay: false,
+}
+
 export default class ModalManager {
   public componentFilename = null
   public componentProps = null
   public isPreset = null
   public instance = null
 
-  #load(name: string, props = {}, isPreset = false) {
+  #load(name: string, props = {}, config: IConfig) {
 
     const promise = new Promise((resolve, reject) => {
 
@@ -26,16 +36,17 @@ export default class ModalManager {
 
     this.componentFilename.value = name
     this.componentProps.value = props
-    this.isPreset.value = isPreset
+    this.isPreset.value = config.isPreset
+    this.isPreventClickOverlay.value = config.isPreventClickOverlay
 
     return promise
   }
 
   confirm(props = {}) {
-    return this.#load('Confirm', props, true)
+    return this.#load('Confirm', props, {isPreset: true})
   }
 
-  load(name: string, props = {}) {
-    return this.#load(name, props)
+  load(name: string, props = {}, config: IConfig = defaultConfig) {
+    return this.#load(name, props, config)
   }
 }

@@ -8,7 +8,9 @@ definePageMeta({
 })
 
 async function openModal() {
-  await $modal.load('ExampleModal')
+  await $modal.load('ExampleModal', {}, {
+    isPreventClickOverlay: true,
+  })
 }
 
 async function openConfirm() {

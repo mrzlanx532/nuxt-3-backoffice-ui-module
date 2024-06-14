@@ -5,6 +5,7 @@ import { useNuxtApp } from '#imports'
 const componentFilename = ref(null)
 const component = shallowRef(null)
 const isPreset = ref(false)
+const isPreventClickOverlay = ref(false)
 const modalContainerClassModifier = ref(null)
 const componentProps = ref({})
 
@@ -14,6 +15,7 @@ onMounted(() => {
   $modal.componentFilename = componentFilename
   $modal.componentProps = componentProps
   $modal.isPreset = isPreset
+  $modal.isPreventClickOverlay = isPreventClickOverlay
   $modal.instance = getCurrentInstance()
 })
 
@@ -32,9 +34,9 @@ watch(componentFilename, (name) => {
       }
 
       /** Для playground раскомментировать */
-      //return import(`@/modals/${name}.vue`)
+      return import(`@/modals/${name}.vue`)
 
-      return import(`../../../../../../../modals/${name}.vue`)
+      //return import(`../../../../../../../modals/${name}.vue`)
     })
 
     modalContainerClassModifier.value = dynamicComponent?.parentClassModifier
@@ -55,6 +57,11 @@ watch(componentFilename, (name) => {
 const emit = defineEmits(['modal:close'])
 
 const onOverlayClick = () => {
+
+  if (isPreventClickOverlay.value) {
+    return
+  }
+
   componentFilename.value = null
   emit('modal:close')
 }
