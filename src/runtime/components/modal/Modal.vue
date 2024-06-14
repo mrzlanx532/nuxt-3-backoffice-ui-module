@@ -6,7 +6,7 @@ const componentFilename = ref(null)
 const component = shallowRef(null)
 const isPreset = ref(false)
 const isPreventClickOverlay = ref(false)
-const modalContainerClassModifier = ref(null)
+const modalContainerClass = ref('')
 const componentProps = ref({})
 
 const { $modal } = useNuxtApp()
@@ -17,6 +17,7 @@ onMounted(() => {
   $modal.isPreset = isPreset
   $modal.isPreventClickOverlay = isPreventClickOverlay
   $modal.instance = getCurrentInstance()
+  $modal.modalContainerClass = modalContainerClass
 })
 
 watch(componentFilename, (name) => {
@@ -28,19 +29,16 @@ watch(componentFilename, (name) => {
   }
 
   try {
-    const dynamicComponent = defineAsyncComponent( () => {
+    component.value = defineAsyncComponent( () => {
       if (isPreset.value) {
         return import(`./presets/${name}.vue`)
       }
 
       /** Для playground раскомментировать */
-      return import(`@/modals/${name}.vue`)
+      //return import(`@/modals/${name}.vue`)
 
-      //return import(`../../../../../../../modals/${name}.vue`)
+      return import(`../../../../../../../modals/${name}.vue`)
     })
-
-    modalContainerClassModifier.value = dynamicComponent?.parentClassModifier
-    component.value = dynamicComponent
 
     const scrollTop = window.scrollY || document.documentElement.scrollTop
     const scrollLeft = window.scrollX || document.documentElement.scrollLeft
@@ -95,7 +93,7 @@ const onReject = (payload: unknown) => {
             @click="onOverlayClick"
           />
         </Transition>
-        <div :class="['modal__container', modalContainerClassModifier]">
+        <div :class="['modal__container', modalContainerClass]">
           <component
             :is="component"
             :data="componentProps"

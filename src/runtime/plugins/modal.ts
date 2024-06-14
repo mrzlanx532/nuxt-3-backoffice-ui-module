@@ -1,11 +1,13 @@
 interface IConfig {
   isPreset?: boolean,
   isPreventClickOverlay?: boolean,
+  modalContainerClass?: string
 }
 
 const defaultConfig: IConfig = {
   isPreset: false,
   isPreventClickOverlay: false,
+  modalContainerClass: ''
 }
 
 export default class ModalManager {
@@ -38,12 +40,13 @@ export default class ModalManager {
     this.componentProps.value = props
     this.isPreset.value = config.isPreset
     this.isPreventClickOverlay.value = config.isPreventClickOverlay
+    this.modalContainerClass.value = config.modalContainerClass
 
     return promise
   }
 
   confirm(props = {}) {
-    return this.#load('Confirm', props, {isPreset: true})
+    return this.#load('Confirm', props, {isPreset: true, modalContainerClass: '--small'})
   }
 
   load(name: string, props = {}, config: IConfig = defaultConfig) {
