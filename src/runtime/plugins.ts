@@ -3,7 +3,7 @@ import { defineNuxtPlugin, onNuxtReady } from '#imports'
 import NotificationManager from './plugins/notification'
 import ModalManager from './plugins/modal'
 
-import * as vClickOutside from 'click-outside-vue3'
+import vClickOutside from 'click-outside-vue3/src/index'
 
 import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/common.css'
 import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/v-scrollable.css'
