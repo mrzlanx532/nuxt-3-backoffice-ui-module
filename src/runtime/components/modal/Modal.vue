@@ -85,8 +85,7 @@ const updateModalDimensions = () => {
   modalEl.value.style.height = document.documentElement.clientHeight + 'px'
   modalEl.value.style.width = document.documentElement.clientWidth + 'px'
 
-  modalContainerEl.value.style.height = document.documentElement.clientHeight + 'px'
-  modalContainerEl.value.style.width = document.documentElement.clientWidth + 'px'
+  modalContainerEl.value.style.maxHeight = document.documentElement.clientHeight + 'px'
 }
 
 onMounted(() => {
