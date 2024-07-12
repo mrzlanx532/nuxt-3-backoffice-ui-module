@@ -9,6 +9,7 @@ const isPreventClickOverlay = ref(false)
 const modalContainerClass = ref('')
 const componentProps = ref({})
 const modalEl: Ref<HTMLElement|null> = ref(null)
+const modalContainerEl: Ref<HTMLElement|null> = ref(null)
 
 const { $modal } = useNuxtApp()
 
@@ -83,6 +84,9 @@ const onReject = (payload: unknown) => {
 const updateModalDimensions = () => {
   modalEl.value.style.height = document.documentElement.clientHeight + 'px'
   modalEl.value.style.width = document.documentElement.clientWidth + 'px'
+
+  modalContainerEl.value.style.height = document.documentElement.clientHeight + 'px'
+  modalContainerEl.value.style.width = document.documentElement.clientWidth + 'px'
 }
 
 onMounted(() => {
@@ -105,7 +109,7 @@ onMounted(() => {
             @click="onOverlayClick"
           />
         </Transition>
-        <div :class="['modal__container', modalContainerClass]" v-scrollable>
+        <div ref="modalContainerEl" :class="['modal__container', modalContainerClass]" v-scrollable>
           <component
             :is="component"
             :data="componentProps"
