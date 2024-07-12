@@ -8,6 +8,7 @@ const isPreset = ref(false)
 const isPreventClickOverlay = ref(false)
 const modalContainerClass = ref('')
 const componentProps = ref({})
+const modalEl: Ref<HTMLElement|null> = ref(null)
 
 const { $modal } = useNuxtApp()
 
@@ -78,11 +79,22 @@ const onReject = (payload: unknown) => {
 
   $modal.instance.reject(payload)
 }
+
+const updateModalDimensions = () => {
+  modalEl.value.style.height = document.documentElement.clientHeight + 'px'
+  modalEl.value.style.width = document.documentElement.clientWidth + 'px'
+}
+
+onMounted(() => {
+  window.addEventListener('resize', updateModalDimensions)
+  updateModalDimensions()
+})
 </script>
 
 <template>
   <teleport to="#teleports">
       <div
+        ref="modalEl"
         class="modal"
         :class="{'modal_active': componentFilename}"
       >
@@ -93,7 +105,7 @@ const onReject = (payload: unknown) => {
             @click="onOverlayClick"
           />
         </Transition>
-        <div :class="['modal__container', modalContainerClass]">
+        <div :class="['modal__container', modalContainerClass]" v-scrollable>
           <component
             :is="component"
             :data="componentProps"

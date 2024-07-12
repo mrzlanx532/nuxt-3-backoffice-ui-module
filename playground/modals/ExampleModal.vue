@@ -14,7 +14,7 @@ const onClick = () => {
 </script>
 
 <template>
-  <div class="content">
+  <div class="content" style="height: 1800px;">
     <button @click="onClick">Подтвердить?</button>
   </div>
 </template>
