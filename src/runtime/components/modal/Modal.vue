@@ -108,7 +108,7 @@ onMounted(() => {
             @click="onOverlayClick"
           />
         </Transition>
-        <div v-show="component !== null" ref="modalContainerEl" :class="['modal__container', modalContainerClass]" v-scrollable>
+        <div v-show="component !== null" ref="modalContainerEl" :class="['modal__container', modalContainerClass]" v-scrollable="{inheritanceDimensions: true}">
           <component
             :is="component"
             :data="componentProps"
