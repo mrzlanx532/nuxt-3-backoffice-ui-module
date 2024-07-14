@@ -32,7 +32,7 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@mrzlanx532/nuxt-3-custom-scroll-plugin": "^0.0.16",
+    "@mrzlanx532/nuxt-3-custom-scroll-plugin": "^0.0.18",
     "@nuxt/kit": "^3.12.1",
     "click-outside-vue3": "^4.0.1"
   },

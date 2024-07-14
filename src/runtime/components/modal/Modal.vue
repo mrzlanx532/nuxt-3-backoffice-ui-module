@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch, ref, defineAsyncComponent, onMounted, getCurrentInstance, shallowRef } from 'vue'
+import { watch, ref, defineAsyncComponent, onMounted, getCurrentInstance, shallowRef, type Ref } from 'vue'
 import { useNuxtApp } from '#imports'
 
 const componentFilename = ref(null)
@@ -37,9 +37,9 @@ watch(componentFilename, (name) => {
       }
 
       /** Для playground раскомментировать */
-      //return import(`@/modals/${name}.vue`)
+      return import(`@/modals/${name}.vue`)
 
-      return import(`../../../../../../../modals/${name}.vue`)
+      //return import(`../../../../../../../modals/${name}.vue`)
     })
 
     const scrollTop = window.scrollY || document.documentElement.scrollTop
@@ -108,7 +108,12 @@ onMounted(() => {
             @click="onOverlayClick"
           />
         </Transition>
-        <div v-show="component !== null" ref="modalContainerEl" :class="['modal__container', modalContainerClass]" v-scrollable="{inheritanceDimensions: true}">
+        <div
+          v-show="component !== null"
+          ref="modalContainerEl"
+          :class="['modal__container', modalContainerClass]"
+          v-scrollable="{inheritanceDimensions: true}"
+        >
           <component
             :is="component"
             :data="componentProps"
