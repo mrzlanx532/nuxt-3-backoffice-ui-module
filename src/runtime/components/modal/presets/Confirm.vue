@@ -39,7 +39,7 @@ const dataLocal = computed(() => {
     <div class="modal-confirm__question">{{ dataLocal.question }}</div>
     <div class="modal-confirm__more" v-if="dataLocal.moreText">{{ dataLocal.moreText }}</div>
     <div class="modal-confirm__actions">
-      <button class="btn --outline-contrast-danger --big --full-width" @click="onClick(false)">{{ dataLocal.disagreeText }}</button>
+      <button class="btn --outline-contrast-default --big --full-width" @click="onClick(false)">{{ dataLocal.disagreeText }}</button>
       <button class="btn --success --big --full-width" @click="onClick(true)">{{ dataLocal.agreeText }}</button>
     </div>
   </div>
