@@ -1,14 +1,8 @@
-enum Type {
-  DEFAULT = 'default',
-  PRIMARY = 'primary',
-  SUCCESS = 'success',
-  DANGER = 'danger',
-  WARNING = 'warning',
-}
+type NotificationType = 'default' | 'primary' | 'success' | 'danger' | 'warning'
 
 type Notification = {
   message: string,
-  type?: Type,
+  type?: NotificationType,
   autoRemoving: boolean,
   milli?: number,
   milliAfterHover?: number,
