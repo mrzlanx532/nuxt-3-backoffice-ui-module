@@ -3,7 +3,7 @@ type NotificationType = 'default' | 'primary' | 'success' | 'danger' | 'warning'
 type Notification = {
   message: string,
   type?: NotificationType,
-  autoRemoving: boolean,
+  autoRemoving?: boolean,
   milli?: number,
   milliAfterHover?: number,
   isWaiting?: boolean
