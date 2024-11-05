@@ -21,7 +21,7 @@ export interface IModalManager {
     props: {
       [key: string]: any
     },
-    config: IConfig
+    config?: IConfig
   ) => any,
 
   confirm: (
