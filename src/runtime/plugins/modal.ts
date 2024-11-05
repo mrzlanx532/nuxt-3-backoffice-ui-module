@@ -10,7 +10,29 @@ const defaultConfig: IConfig = {
   modalContainerClass: ''
 }
 
-export default class ModalManager {
+export interface IModalManager {
+  componentFilename: null,
+  componentProps: null,
+  isPreset: null,
+  instance: null,
+
+  load: (
+    name: string,
+    props: {
+      [key: string]: any
+    },
+    config: IConfig
+  ) => Promise,
+
+  confirm: (props: {
+    question?: string,
+    moreText?: string|null,
+    agreeText?: string
+    disagreeText?: string
+  }) => Promise,
+}
+
+export default class ModalManager implements IModalManager{
   public componentFilename = null
   public componentProps = null
   public isPreset = null

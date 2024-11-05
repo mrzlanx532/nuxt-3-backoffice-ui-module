@@ -1,10 +1,10 @@
-import NotificationManager from './plugins/notification'
-import ModalManager from './plugins/modal'
+import { type INotificationManager } from './plugins/notification'
+import { type IModalManager } from './plugins/modal'
 
 declare module '#app' {
   interface NuxtApp {
-    $notification: NotificationManager
-    $modal: ModalManager
+    $notification: INotificationManager
+    $modal: IModalManager
   }
 }
 

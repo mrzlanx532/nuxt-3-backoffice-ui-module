@@ -1,6 +1,6 @@
 type NotificationType = 'default' | 'primary' | 'success' | 'danger' | 'warning'
 
-type Notification = {
+type INotification = {
   message: string,
   type?: NotificationType,
   autoRemoving?: boolean,
@@ -9,11 +9,19 @@ type Notification = {
   isWaiting?: boolean
 }
 
-export default class NotificationManager {
+export interface INotificationManager {
+  instance: null,
+  notifications: INotification[]
+
+  removeItemByTime: (milli: number, id: symbol) => void,
+  push: (notification: INotification) => void
+}
+
+export default class NotificationManager implements INotificationManager{
   public instance = null
   public notifications = null
 
-  public removeItemByTimer = (milli = 2000, id) => {
+  public removeItemByTimer = (milli = 2000, id: symbol): void => {
 
     setTimeout(() => {
 
@@ -30,7 +38,7 @@ export default class NotificationManager {
     }, milli)
   }
 
-  public push(notification: Notification): void {
+  public push(notification: INotification): void {
 
     if (notification.type === undefined) {
       notification.type = Type.DEFAULT
