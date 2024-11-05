@@ -25,7 +25,7 @@ export interface IModalManager {
   ) => any,
 
   confirm: (
-    props: {
+    props?: {
       question?: string,
       moreText?: string|null,
       agreeText?: string
