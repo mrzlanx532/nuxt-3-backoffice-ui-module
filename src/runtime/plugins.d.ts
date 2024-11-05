@@ -3,8 +3,8 @@ import ModalManager from './plugins/modal'
 
 declare module '#app' {
   interface NuxtApp {
-    $notification: typeof NotificationManager
-    $modal: typeof ModalManager
+    $notification: NotificationManager
+    $modal: ModalManager
   }
 }
 
