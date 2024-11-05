@@ -22,14 +22,15 @@ export interface IModalManager {
       [key: string]: any
     },
     config: IConfig
-  ) => Promise,
+  ) => any,
 
-  confirm: (props: {
-    question?: string,
-    moreText?: string|null,
-    agreeText?: string
-    disagreeText?: string
-  }) => Promise,
+  confirm: (
+    props: {
+      question?: string,
+      moreText?: string|null,
+      agreeText?: string
+      disagreeText?: string
+  }) => any,
 }
 
 export default class ModalManager implements IModalManager{
