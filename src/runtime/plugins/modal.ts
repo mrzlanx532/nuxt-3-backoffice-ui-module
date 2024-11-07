@@ -1,4 +1,5 @@
 import ConfirmComponent from '../components/modal/presets/Confirm.vue'
+import type { Component } from 'vue'
 
 interface IConfig {
   isPreventClickOverlay?: boolean,
@@ -11,12 +12,12 @@ const defaultConfig: IConfig = {
 }
 
 export interface IModalManager {
-  component: null,
+  component: null|Component,
   componentProps: null,
   instance: null,
 
   load: (
-    name: string,
+    component: Component,
     props: {
       [key: string]: any
     },
@@ -37,7 +38,7 @@ export default class ModalManager implements IModalManager{
   public componentProps = null
   public instance = null
 
-  #load(component, props = {}, config: IConfig) {
+  #load(component: Component, props = {}, config: IConfig) {
 
     const promise = new Promise((resolve, reject) => {
 
@@ -70,7 +71,7 @@ export default class ModalManager implements IModalManager{
     })
   }
 
-  load(component, props = {}, config: IConfig = defaultConfig) {
+  load(component: Component, props = {}, config: IConfig = defaultConfig) {
     return this.#load(component, props, config)
   }
 }
