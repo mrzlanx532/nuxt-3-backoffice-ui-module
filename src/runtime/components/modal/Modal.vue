@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { watch, ref, defineAsyncComponent, onMounted, getCurrentInstance, shallowRef, type Ref } from 'vue'
+import { watch, ref, onMounted, getCurrentInstance, shallowRef, type Ref } from 'vue'
 import { useNuxtApp } from '#imports'
 
-const componentFilename = ref(null)
+const emit = defineEmits(['modal:close'])
+
 const component = shallowRef(null)
-const isPreset = ref(false)
 const isPreventClickOverlay = ref(false)
 const modalContainerClass = ref('')
 const componentProps = ref({})
@@ -13,35 +13,14 @@ const modalContainerEl: Ref<HTMLElement|null> = ref(null)
 
 const { $modal } = useNuxtApp()
 
-onMounted(() => {
-  $modal.componentFilename = componentFilename
-  $modal.componentProps = componentProps
-  $modal.isPreset = isPreset
-  $modal.isPreventClickOverlay = isPreventClickOverlay
-  $modal.instance = getCurrentInstance()
-  $modal.modalContainerClass = modalContainerClass
-})
+watch(component, (_component) => {
 
-watch(componentFilename, (name) => {
-
-  if (name === null) {
-    component.value = null
+  if (_component === null) {
     window.onscroll = function () {}
     return
   }
 
   try {
-    component.value = defineAsyncComponent( () => {
-      if (isPreset.value) {
-        return import(`./presets/${name}.vue`)
-      }
-
-      /** Для playground раскомментировать */
-      //return import(`@/modals/${name}.vue`)
-
-      return import(`../../../../../../../modals/${name}.vue`)
-    })
-
     const scrollTop = window.scrollY || document.documentElement.scrollTop
     const scrollLeft = window.scrollX || document.documentElement.scrollLeft
 
@@ -54,28 +33,26 @@ watch(componentFilename, (name) => {
   }
 })
 
-const emit = defineEmits(['modal:close'])
-
 const onOverlayClick = () => {
 
   if (isPreventClickOverlay.value) {
     return
   }
 
-  componentFilename.value = null
+  component.value = null
   emit('modal:close')
 }
 
 const onResolve = (payload: unknown) => {
 
-  componentFilename.value = null
+  component.value = null
   emit('modal:close')
 
   $modal.instance.resolve(payload)
 }
 
 const onReject = (payload: unknown) => {
-  componentFilename.value = null
+  component.value = null
   emit('modal:close')
 
   $modal.instance.reject(payload)
@@ -89,6 +66,12 @@ const updateModalDimensions = () => {
 }
 
 onMounted(() => {
+  $modal.component = component
+  $modal.componentProps = componentProps
+  $modal.isPreventClickOverlay = isPreventClickOverlay
+  $modal.instance = getCurrentInstance()
+  $modal.modalContainerClass = modalContainerClass
+
   window.addEventListener('resize', updateModalDimensions)
   updateModalDimensions()
 })
@@ -99,17 +82,17 @@ onMounted(() => {
       <div
         ref="modalEl"
         class="modal"
-        :class="{'modal_active': componentFilename}"
+        :class="{'modal_active': component}"
       >
         <Transition>
           <div
-            v-show="componentFilename"
+            v-show="component"
             class="modal__overlay"
             @click="onOverlayClick"
           />
         </Transition>
         <div
-          v-show="component !== null"
+          v-show="component"
           ref="modalContainerEl"
           :class="['modal__container', modalContainerClass]"
           v-scrollable="{inheritanceDimensions: true}"

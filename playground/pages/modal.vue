@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { useNuxtApp } from '#app'
-
-const { $modal } = useNuxtApp()
+import ExampleModal from '~/modals/ExampleModal.vue'
 
 definePageMeta({
   layout: 'default',
 })
 
+const { $modal } = useNuxtApp()
+
 async function openModal() {
-  await $modal.load('ExampleModal')
+  await $modal.load(ExampleModal)
 }
 
 async function openConfirm() {

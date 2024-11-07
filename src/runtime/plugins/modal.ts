@@ -1,19 +1,18 @@
+import ConfirmComponent from '../components/modal/presets/Confirm.vue'
+
 interface IConfig {
-  isPreset?: boolean,
   isPreventClickOverlay?: boolean,
   modalContainerClass?: string
 }
 
 const defaultConfig: IConfig = {
-  isPreset: false,
   isPreventClickOverlay: false,
   modalContainerClass: ''
 }
 
 export interface IModalManager {
-  componentFilename: null,
+  component: null,
   componentProps: null,
-  isPreset: null,
   instance: null,
 
   load: (
@@ -34,12 +33,11 @@ export interface IModalManager {
 }
 
 export default class ModalManager implements IModalManager{
-  public componentFilename = null
+  public component = null
   public componentProps = null
-  public isPreset = null
   public instance = null
 
-  #load(name: string, props = {}, config: IConfig) {
+  #load(component, props = {}, config: IConfig) {
 
     const promise = new Promise((resolve, reject) => {
 
@@ -52,16 +50,14 @@ export default class ModalManager implements IModalManager{
     })
 
     if (
-      this.componentFilename === null ||
-      this.componentProps === null ||
-      this.isPreset === null
+      this.component === null ||
+      this.componentProps === null
     ) {
       throw new Error('Unexpected error')
     }
 
-    this.componentFilename.value = name
+    this.component.value = component
     this.componentProps.value = props
-    this.isPreset.value = config.isPreset
     this.isPreventClickOverlay.value = config.isPreventClickOverlay
     this.modalContainerClass.value = config.modalContainerClass
 
@@ -69,10 +65,12 @@ export default class ModalManager implements IModalManager{
   }
 
   confirm(props = {}) {
-    return this.#load('Confirm', props, {isPreset: true, modalContainerClass: '--small'})
+    return this.#load(ConfirmComponent, props, {
+      modalContainerClass: '--small'
+    })
   }
 
-  load(name: string, props = {}, config: IConfig = defaultConfig) {
-    return this.#load(name, props, config)
+  load(component, props = {}, config: IConfig = defaultConfig) {
+    return this.#load(component, props, config)
   }
 }
