@@ -1,4 +1,6 @@
 import { defineNuxtModule, addPlugin, createResolver, addComponent } from '@nuxt/kit'
+import type { Nuxt } from '@nuxt/schema'
+import { type NitroConfig } from 'nitropack'
 
 export interface ModuleOptions {}
 
@@ -8,10 +10,11 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'backofficeUI',
   },
   defaults: {},
-  async setup(_options, nuxt) {
+  async setup(_options: ModuleOptions, nuxt: Nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    nuxt.hook('nitro:config', async (nitroConfig) => {
+    nuxt.hook('nitro:config', async (nitroConfig: NitroConfig) => {
+
       nitroConfig.publicAssets ||= []
       nitroConfig.publicAssets.push({
         dir: resolve('./runtime/public'),
