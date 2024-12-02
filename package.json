@@ -1,6 +1,6 @@
 {
   "name": "@mrzlanx532/nuxt-3-backoffice-ui",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "Nuxt 3 backoffice components",
   "repository": {
     "type": "git",
@@ -32,12 +32,12 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@mrzlanx532/nuxt-3-custom-scroll-plugin": "^0.0.21",
+    "@mrzlanx532/nuxt-3-custom-scroll-plugin": "^0.0.22",
     "@nuxt/kit": "^3.12.1",
     "click-outside-vue3": "^4.0.1"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.3.3",
+    "@nuxt/devtools": "1.3.9",
     "@nuxt/eslint-config": "^0.3.13",
     "@nuxt/module-builder": "^0.7.0",
     "@nuxt/schema": "^3.12.1",
@@ -45,7 +45,7 @@
     "@types/node": "^20.14.2",
     "changelogen": "^0.5.5",
     "eslint": "^9.4.0",
-    "nuxt": "^3.12.1",
+    "nuxt": "3.12.4",
     "typescript": "latest",
     "vitest": "^1.6.0",
     "vue-tsc": "^2.0.21"
