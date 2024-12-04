@@ -8,6 +8,7 @@ import { Notification, Modal } from '#components'
       <NuxtLink to="modal">Модалка</NuxtLink>
       <NuxtLink to="notifications">Уведомления</NuxtLink>
       <NuxtLink to="click-outside">ClickOutside</NuxtLink>
+      <NuxtLink to="scrollable">V-Scrollable</NuxtLink>
     </div>
     <slot />
     <Notification /><!-- Для работы уведомлений обязательно -->

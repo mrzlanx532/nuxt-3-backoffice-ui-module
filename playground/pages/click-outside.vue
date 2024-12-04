@@ -1,6 +1,6 @@
 <script setup>
 const onClickOutside = () => {
-  alert('Работает')
+  console.log('click-outside работает')
 }
 </script>
 

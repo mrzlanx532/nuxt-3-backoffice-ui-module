@@ -15,7 +15,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(vClickOutside)
   nuxtApp.vueApp.directive('scrollable', {
     mounted: function (el, binding) {
-      new Scrollable(el, binding.value)
+      el.scrollable_manager = new Scrollable(el, binding.value)
+    },
+    unmounted: function (el) {
+      el.scrollable_manager.destroy()
     }
   })
 
