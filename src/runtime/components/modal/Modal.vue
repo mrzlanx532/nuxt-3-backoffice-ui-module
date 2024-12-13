@@ -33,35 +33,32 @@ watch(component, (_component) => {
   }
 })
 
-const onOverlayClick = () => {
+const closeModal = () => {
+  modalContainerEl.value.scrollable_manager.scrollToDefault()
 
+  component.value = null
+  emit('modal:close')
+}
+
+const onOverlayClick = () => {
   if (isPreventClickOverlay.value) {
     return
   }
 
-  modalContainerEl.value.scrollable_manager.scrollToDefault()
+  closeModal()
+}
 
-  component.value = null
-  emit('modal:close')
+const onClose = () => {
+  closeModal()
 }
 
 const onResolve = (payload: unknown) => {
-
-  modalContainerEl.value.scrollable_manager.scrollToDefault()
-
-  component.value = null
-  emit('modal:close')
-
+  closeModal()
   $modal.instance.resolve(payload)
 }
 
 const onReject = (payload: unknown) => {
-
-  modalContainerEl.value.scrollable_manager.scrollToDefault()
-
-  component.value = null
-  emit('modal:close')
-
+  closeModal()
   $modal.instance.reject(payload)
 }
 
@@ -107,7 +104,7 @@ onMounted(() => {
           <component
             :is="component"
             :data="componentProps"
-            @modal:close="onOverlayClick"
+            @modal:close="onClose"
             @modal:resolve="onResolve"
             @modal:reject="onReject"
           />

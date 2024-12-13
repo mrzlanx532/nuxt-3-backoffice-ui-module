@@ -6,10 +6,10 @@ const test = defineProps({
   }
 })
 
-const emit = defineEmits(['modal:resolve'])
+const emit = defineEmits(['modal:reject'])
 
 const onClick = () => {
-  emit('modal:resolve', 'что-то')
+  emit('modal:reject', 'что-то')
 }
 </script>
 

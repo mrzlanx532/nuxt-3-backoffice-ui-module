@@ -9,7 +9,8 @@ definePageMeta({
 const { $modal } = useNuxtApp()
 
 async function openModal() {
-  await $modal.load(ExampleModal)
+  //await $modal.load(ExampleModal)
+  await $modal.load(ExampleModal, {}, { isPreventClickOverlay: true })
 }
 
 async function openConfirm() {
@@ -19,7 +20,6 @@ async function openConfirm() {
 
 <template>
   <div>
-    <div style="margin-top: 10px;"><code>Для дебага в playground: Необходимо изменить путь </code></div>
     <div style="margin-top: 10px;">
       <button type="button" @click="openModal">Открыть модалку по пути: @/modals/ExampleModal</button>
       <button type="button" @click="openConfirm">Открыть пресет Confirm</button>

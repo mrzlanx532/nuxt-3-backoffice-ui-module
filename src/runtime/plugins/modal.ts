@@ -1,14 +1,10 @@
 import ConfirmComponent from '../components/modal/presets/Confirm.vue'
 import type { Component } from 'vue'
+import defu from 'defu'
 
-export interface IConfig {
+interface IConfig {
   isPreventClickOverlay?: boolean,
   modalContainerClass?: string
-}
-
-const defaultConfig: IConfig = {
-  isPreventClickOverlay: false,
-  modalContainerClass: ''
 }
 
 export interface IModalManager {
@@ -71,7 +67,10 @@ export default class ModalManager implements IModalManager{
     })
   }
 
-  load(component: Component, props = {}, config: IConfig = defaultConfig) {
-    return this.#load(component, props, config)
+  load(component: Component, props = {}, config: IConfig = {}) {
+    return this.#load(component, props, defu(config, {
+      isPreventClickOverlay: false,
+      modalContainerClass: ''
+    }))
   }
 }
