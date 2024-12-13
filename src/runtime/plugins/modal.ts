@@ -1,7 +1,7 @@
 import ConfirmComponent from '../components/modal/presets/Confirm.vue'
 import type { Component } from 'vue'
 
-interface IConfig {
+export interface IConfig {
   isPreventClickOverlay?: boolean,
   modalContainerClass?: string
 }
