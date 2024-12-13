@@ -39,11 +39,15 @@ const onOverlayClick = () => {
     return
   }
 
+  modalContainerEl.value.scrollable_manager.scrollToDefault()
+
   component.value = null
   emit('modal:close')
 }
 
 const onResolve = (payload: unknown) => {
+
+  modalContainerEl.value.scrollable_manager.scrollToDefault()
 
   component.value = null
   emit('modal:close')
@@ -52,6 +56,9 @@ const onResolve = (payload: unknown) => {
 }
 
 const onReject = (payload: unknown) => {
+
+  modalContainerEl.value.scrollable_manager.scrollToDefault()
+
   component.value = null
   emit('modal:close')
 
