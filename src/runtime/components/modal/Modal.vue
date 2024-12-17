@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch, ref, onMounted, getCurrentInstance, shallowRef, type Ref } from 'vue'
+import { watch, ref, onMounted, getCurrentInstance, shallowRef, useTemplateRef } from 'vue'
 import { useNuxtApp } from '#imports'
 
 const emit = defineEmits(['modal:close'])
@@ -8,8 +8,9 @@ const component = shallowRef(null)
 const isPreventClickOverlay = ref(false)
 const modalContainerClass = ref('')
 const componentProps = ref({})
-const modalEl: Ref<HTMLElement|null> = ref(null)
-const modalContainerEl: Ref<HTMLElement|null> = ref(null)
+
+const modalEl = useTemplateRef<HTMLDivElement>('modalEl')
+const modalContainerEl = useTemplateRef<HTMLDivElement>('modalContainerEl')
 
 const { $modal } = useNuxtApp()
 
@@ -63,6 +64,10 @@ const onReject = (payload: unknown) => {
 }
 
 const updateModalDimensions = () => {
+  if (!modalEl.value) {
+    return
+  }
+
   modalEl.value.style.height = document.documentElement.clientHeight + 'px'
   modalEl.value.style.width = document.documentElement.clientWidth + 'px'
 
