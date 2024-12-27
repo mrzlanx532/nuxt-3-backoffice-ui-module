@@ -53,7 +53,12 @@ const onClickCross = (index) => {
                 </svg>
               </div>
               <div class="notification__content">
-                {{ notification.message }}
+                <div class="notification__content-line" v-if="Array.isArray(notification.message)" v-for="message in notification.message">
+                  {{ message }}
+                </div>
+                <template v-else>
+                  {{ notification.message }}
+                </template>
               </div>
               <svg class="notification__cross" @click="onClickCross(index)">
                 <use xlink:href="/img/sprite.svg#cancel_cross_bold"/>

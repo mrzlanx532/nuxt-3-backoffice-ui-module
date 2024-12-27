@@ -26,13 +26,13 @@ const notifications = [
   },
 ]
 
-const onShowOne = (type, message) => {
-  $notification.push({message, type})
+const onShowOne = (notification) => {
+  $notification.push(notification)
 }
 
 const onShowAll = () => {
   notifications.forEach((notification) => {
-    $notification.push({message: notification.message, type: notification.type})
+    $notification.push(notification)
   })
 }
 
@@ -42,6 +42,6 @@ definePageMeta({
 </script>
 
 <template>
-  <button v-for="notification in notifications" @click="onShowOne(notification.type, notification.message)">Отправить уведомление [{{notification.type}}]</button>
+  <button v-for="notification in notifications" @click="onShowOne(notification)">Отправить уведомление [{{notification.type}}]</button>
   <button @click="onShowAll()">Отправить все сразу</button>
 </template>

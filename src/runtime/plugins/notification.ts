@@ -1,7 +1,7 @@
 type NotificationType = 'default' | 'primary' | 'success' | 'danger' | 'warning'
 
 type INotification = {
-  message: string,
+  message: string | string[],
   type?: NotificationType,
   autoRemoving?: boolean,
   milli?: number,
