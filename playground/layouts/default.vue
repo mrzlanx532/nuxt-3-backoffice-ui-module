@@ -5,10 +5,10 @@ import { Notification, Modal } from '#components'
 <template>
   <div>
     <div class="links">
-      <NuxtLink to="modal">Модалка</NuxtLink>
-      <NuxtLink to="notifications">Уведомления</NuxtLink>
-      <NuxtLink to="click-outside">ClickOutside</NuxtLink>
-      <NuxtLink to="scrollable">V-Scrollable</NuxtLink>
+      <NuxtLink to="/test/modal">Модалка</NuxtLink>
+      <NuxtLink to="/test/notifications">Уведомления</NuxtLink>
+      <NuxtLink to="/test/click-outside">ClickOutside</NuxtLink>
+      <NuxtLink to="/test/scrollable">V-Scrollable</NuxtLink>
     </div>
     <slot />
     <Notification /><!-- Для работы уведомлений обязательно -->

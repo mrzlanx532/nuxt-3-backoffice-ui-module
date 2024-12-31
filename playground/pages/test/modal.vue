@@ -9,7 +9,7 @@ definePageMeta({
 const { $modal } = useNuxtApp()
 
 async function openModal() {
-  //await $modal.load(ExampleModal)
+  // await $modal.load(ExampleModal)
   await $modal.load(ExampleModal, {}, { isPreventClickOverlay: true })
 }
 

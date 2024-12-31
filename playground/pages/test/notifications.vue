@@ -42,6 +42,8 @@ definePageMeta({
 </script>
 
 <template>
-  <button v-for="notification in notifications" @click="onShowOne(notification)">Отправить уведомление [{{notification.type}}]</button>
-  <button @click="onShowAll()">Отправить все сразу</button>
+  <div>
+    <button v-for="notification in notifications" @click="onShowOne(notification)">Отправить уведомление [{{notification.type}}]</button>
+    <button @click="onShowAll()">Отправить все сразу</button>
+  </div>
 </template>
