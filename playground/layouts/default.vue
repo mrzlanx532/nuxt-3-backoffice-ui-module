@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SideMenu from '#components'
+import { SideMenu } from '#components'
 import { useNuxtApp } from '#imports'
 
 interface IUser {
