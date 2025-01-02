@@ -1,31 +1,141 @@
-<script setup>
-import { Notification, Modal } from '#components'
+<script setup lang="ts">
+import SideMenu from '#components'
+import { useNuxtApp } from '#imports'
+
+interface IUser {
+  id: number
+  name: string
+  picture: {
+    original: string
+  } | null
+}
+
+const items = [
+  {
+    name: 'Шумы',
+    icon: '/img/menu_icons_sprite.svg#home',
+    children: [
+      {
+        name: 'Каталог треков',
+        link: '/sounds',
+      },
+      {
+        name: 'Коллекции',
+        link: '/sounds/collections',
+      },
+      {
+        name: 'Авторы',
+        link: '/sounds/authors',
+      },
+      {
+        name: 'Библиотеки',
+        link: '/sounds/libraries',
+      },
+    ],
+  },
+  {
+    name: 'Музыка',
+    icon: '/img/menu_icons_sprite.svg#waveform',
+    children: [
+      {
+        name: 'Каталог треков',
+        link: '/music',
+      },
+      {
+        name: 'Плейлисты',
+        link: '/music/playlists',
+      },
+      {
+        name: 'Авторы',
+        link: '/music/authors',
+      },
+      {
+        name: 'Лейблы',
+        link: '/music/labels',
+      },
+      {
+        name: 'Альбомы',
+        link: '/music/albums',
+      },
+    ],
+  },
+  {
+    name: 'Пользователи',
+    icon: '/img/menu_icons_sprite.svg#user',
+    children: [
+      {
+        name: 'Каталог пользователей',
+        link: '/users',
+        icon: '/img/menu_icons_sprite.svg#user',
+      },
+      {
+        name: 'Отчеты',
+        link: '/reports',
+        icon: '/img/menu_icons_sprite.svg#document',
+      },
+    ],
+  },
+  {
+    name: 'Блог',
+    link: '/blog',
+    icon: '/img/menu_icons_sprite.svg#users',
+  },
+  {
+    name: 'Ручки',
+    link: '/pencils',
+    icon: '/img/menu_icons_sprite.svg#users',
+  },
+]
+
+const {
+  $auth,
+} = useNuxtApp()
+
+const authorizedUser = $auth().getUser<IUser>()
+
+const user = ref({
+  id: authorizedUser.value!.id,
+  name: authorizedUser.value!.name,
+  img: authorizedUser.value!.picture?.original,
+})
 </script>
 
 <template>
-  <div>
-    <div class="links">
-      <NuxtLink to="/test/modal">Модалка</NuxtLink>
-      <NuxtLink to="/test/notifications">Уведомления</NuxtLink>
-      <NuxtLink to="/test/click-outside">ClickOutside</NuxtLink>
-      <NuxtLink to="/test/scrollable">V-Scrollable</NuxtLink>
+  <div id="app">
+    <div class="container">
+      <SideMenu :items="items" :user="user">
+        <div class="img-container">
+          <img alt="logo" src="/img/logo.png">
+          <div class="logo-text-container">Example project</div>
+        </div>
+      </SideMenu>
+      <div class="page">
+        <div class="page__container">
+          <slot />
+        </div>
+      </div>
     </div>
-    <slot />
-    <Notification /><!-- Для работы уведомлений обязательно -->
-    <Modal /><!-- Для работы модалок обязательно -->
+    <Modal />
+    <Notification />
   </div>
 </template>
 
 <style scoped>
-div {
-  height: 100%;
-  width: 100%;
+.logo-text-container {
+  display: flex;
+  place-items: center center;
+  padding-left: 10px;
+  user-select: none;
 }
 
-.links {
-  padding: 20px;
+.img-container {
+  padding: 30px 10px 30px 30px;
   display: flex;
   flex-direction: row;
-  grid-gap: 10px;
+}
+
+img {
+  width: 30px;
+  height: 30px;
 }
 </style>

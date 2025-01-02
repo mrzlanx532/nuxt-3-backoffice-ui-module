@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: [
+    '@mrzlanx532/nuxt-3-laravel-auth-module',
+    '../src/module',
+  ],
   // myModule: {},
   devtools: { enabled: true },
 

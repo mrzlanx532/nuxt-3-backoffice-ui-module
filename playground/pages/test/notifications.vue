@@ -1,5 +1,10 @@
 <script setup>
 import { useNuxtApp } from '#app'
+import { definePageMeta } from '#imports'
+
+definePageMeta({
+  layout: 'test',
+})
 
 const { $notification } = useNuxtApp()
 

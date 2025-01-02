@@ -18,7 +18,7 @@ export default defineNuxtModule<ModuleOptions>({
       nitroConfig.publicAssets ||= []
       nitroConfig.publicAssets.push({
         dir: resolve('./runtime/public'),
-        maxAge: 60 * 60 * 24 * 365
+        maxAge: 60 * 60 * 24 * 365,
       })
     })
 
@@ -32,6 +32,11 @@ export default defineNuxtModule<ModuleOptions>({
     await addComponent({
       name: 'Modal',
       filePath: resolve('./runtime/components/modal/Modal.vue'),
+    })
+
+    await addComponent({
+      name: 'SideMenu',
+      filePath: resolve('./runtime/components/base/SideMenu.vue'),
     })
 
     addPlugin(resolve('./runtime/plugins'))

@@ -1,4 +1,10 @@
 <script setup>
+import { definePageMeta } from '#imports'
+
+definePageMeta({
+  layout: 'test',
+})
+
 const onClickOutside = () => {
   console.log('click-outside работает')
 }
@@ -6,7 +12,10 @@ const onClickOutside = () => {
 
 <template>
   <div>
-    <input type="text" v-click-outside="onClickOutside"/>
+    <input
+      v-click-outside="onClickOutside"
+      type="text"
+    >
     <div> Другое место</div>
   </div>
 </template>

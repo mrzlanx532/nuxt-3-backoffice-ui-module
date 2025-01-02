@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useNuxtApp } from '#app'
 import ExampleModal from '~/modals/ExampleModal.vue'
+import { definePageMeta } from '#imports'
 
 definePageMeta({
-  layout: 'default',
+  layout: 'test',
 })
 
 const { $modal } = useNuxtApp()
