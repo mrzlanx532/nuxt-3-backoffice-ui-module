@@ -31,7 +31,6 @@ export default defineNuxtModule<ModuleOptions>({
 
     addPlugin(resolve('./runtime/plugins'))
     addPlugin(resolve('./runtime/plugins/wangEditor.client'))
-    addPlugin(resolve('./runtime/plugins/maska'))
 
     await addComponent({
       name: 'Notification',

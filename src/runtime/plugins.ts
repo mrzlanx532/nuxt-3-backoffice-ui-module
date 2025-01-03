@@ -1,9 +1,10 @@
 import { defineNuxtPlugin, onNuxtReady } from '#imports'
 
-import NotificationManager from './plugins/notification'
-import ModalManager from './plugins/modal'
+import NotificationManager from './classes/notification'
+import ModalManager from './classes/modal'
 
 import vClickOutside from 'click-outside-vue3/src/index'
+import { vMaska } from 'maska'
 
 import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/common.css'
 import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/v-scrollable.css'
@@ -13,6 +14,7 @@ import { Scrollable, DocumentScroll } from '@mrzlanx532/nuxt-3-custom-scroll-plu
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(vClickOutside)
+  nuxtApp.vueApp.directive('maska', vMaska)
   nuxtApp.vueApp.directive('scrollable', {
     mounted: function (el, binding) {
       el.scrollable_manager = new Scrollable(el, binding.value)
