@@ -30,6 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     await addImportsByFolderRecursively(resolve('./runtime/composables'))
 
     addPlugin(resolve('./runtime/plugins'))
+    addPlugin(resolve('./runtime/plugins/wangEditor.client'))
 
     await addComponent({
       name: 'Notification',
