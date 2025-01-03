@@ -2,6 +2,7 @@
 import { definePageMeta } from '#imports'
 import Button from '../../../src/runtime/components/base/Button.vue'
 import Browser from '../../../src/runtime/components/base/Browser/Browser.vue'
+import Picture from '../../../src/runtime/components/base/Browser/ColumnComponents/Picture.vue'
 import ObjectForm from '~/modals/objects/ObjectForm.vue'
 
 definePageMeta({
@@ -46,6 +47,10 @@ const columns = shallowRef([
   {
     name: 'example_input_file',
     title: 'InputFile',
+    component: {
+      component: Picture,
+      title: 'name',
+    }
   },
   {
     name: 'example_select',
@@ -56,11 +61,11 @@ const columns = shallowRef([
     title: 'SelectWrap',
   },
   {
-    name: 'example_select_switcher',
+    name: 'example_switcher',
     title: 'Switcher',
   },
   {
-    name: 'example_select_textarea',
+    name: 'example_textarea',
     title: 'Textarea',
   },
 ])
