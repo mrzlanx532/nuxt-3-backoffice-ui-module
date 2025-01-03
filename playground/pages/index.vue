@@ -6,8 +6,8 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <h3>Главное</h3>
-    <p>Для управления используйте меню слева</p>
+  <div style="background: white; border-radius: 7px; min-height: calc(100vh - 40px); padding: 20px;">
+    <div class="page__title">Главная</div>
+    <p class="mt_10">Для начала работы используйте меню слева</p>
   </div>
 </template>
