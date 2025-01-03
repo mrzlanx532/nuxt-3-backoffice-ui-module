@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   ],
 
   laravelAuth: {
-    domain: 'http://backoffice-api.lsmlocal.ru',
+    domain: 'http://backoffice-api.example-laravel-backend-for-nuxt.ru',
     redirects: {
       guest: '/login',
       auth: '/'
