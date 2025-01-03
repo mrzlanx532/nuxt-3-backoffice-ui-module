@@ -66,7 +66,7 @@ async function onClick() {
       />
       <button
         class="login__btn"
-        type="button"
+        type="submit"
         :disabled="isWait"
         @click.prevent="onClick"
       >
