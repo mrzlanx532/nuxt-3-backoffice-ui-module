@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import WangEditor from '../WangEditor.vue'
-import type { OutputData } from '@editorjs/editorjs'
 
 const emit = defineEmits(['update:modelValue'])
 
 const model = defineModel<string | undefined>()
-
-const editorEl = useTemplateRef<HTMLElement>('editorEl')
 
 const props = defineProps({
   label: {
@@ -32,7 +29,7 @@ const props = defineProps({
   }
 })
 
-const onChange = (data: OutputData) => {
+const onChange = (data) => {
   emit('update:modelValue', JSON.stringify(data))
 }
 </script>
