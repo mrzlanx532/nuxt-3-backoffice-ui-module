@@ -1,0 +1,69 @@
+/* Main */
+:root {
+  /* Colors */
+  --color-1: #ffffff;
+  --color-2: #dbdbdb;
+  --color-3: #f3f3f3;
+  --color-4: #757575;
+  --color-5: #2b2b2b;
+  --color-6: #959595;
+  --color-7: #e8e7e7;
+
+  --main-box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  --main-background-color: #ffffff;
+  --main-border-radius: 7px;
+  --main-hover-background-color: #f7f7f7;
+  --main-border-color: #e7e7e7;
+
+  /* Document Scroll */
+  --document-scroll-border-radius: 5px;
+  --document-scroll-thickness: 4px;
+  --document-scroll-thickness-hover-active: 8px;
+  //--document-scroll-background: linear-gradient(to bottom, #DE4020 0%, orange 100%);
+
+  --document-scroll-track-background: #dbdbdb;
+  --document-scroll-track-border-radius: 5px;
+
+  /* Scrollable */
+  --scrollable-border-radius: 5px;
+  --scrollable-thickness: 4px;
+  --scrollable-track-background: #dbdbdb;
+  //--scrollable-slider-background: linear-gradient(to bottom, #DE4020 0%, orange 100%);
+
+  /* Buttons */
+  --default-btn-border: #9d9d9d;
+  --default-btn-color: #9d9d9d;
+  --default-btn-color-hover: #7c7c7c;
+  --default-btn-border-active: #7c7c7c;
+  --default-btn-color-active: #6e6e6e;
+  --default-btn-color-contrast: #87929c;
+
+  --primary-btn-border: #0d6efd;
+  --primary-btn-color: #0d6efd;
+  --primary-btn-color-hover: #0b5ed7;
+  --primary-btn-border-active: #0a53bd;
+  --primary-btn-color-active: #0a53be;
+  --primary-btn-color-contrast: #5491f8;
+
+  --success-btn-border: #198754;
+  --success-btn-color: #198754;
+  --success-btn-color-hover: #146c43;
+  --success-btn-border-active: #105736;
+  --success-btn-color-active: #105937;
+  --success-btn-color-contrast: #2caa6f;
+
+  --danger-btn-border: #dc3545;
+  --danger-btn-color: #dc3545;
+  --danger-btn-color-hover: #bb2d3b;
+  --danger-btn-border-active: #a82835;
+  --danger-btn-color-active: #9b2430;
+  --danger-btn-color-contrast: #f85565;
+
+  --warning-btn-border: #fd9426;
+  --warning-btn-color: #fd9426;
+  --warning-btn-color-hover: #e1801c;
+  --warning-btn-border-active: #eebc29;
+  --warning-btn-color-active: #e3831d;
+  --warning-btn-color-contrast: #fba749;
+  --warning-btn-box-shadow: #b58f20;
+}

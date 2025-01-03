@@ -1,0 +1,58 @@
+.clouds {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+
+  &__cloud {
+
+    &.--has-browser {
+      padding: 20px;
+
+      .browser-small__header-left > span {
+        font-size: 16px;
+      }
+    }
+
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--color-1);
+
+    &-header {
+      padding: 10px 10px 20px 10px;
+    }
+
+    &-row {
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      border-bottom: 1px solid var(--color-7);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &-name {
+        display: flex;
+        align-items: center;
+        flex-basis: auto;
+        width: 15%;
+        color: var(--color-4);
+        text-transform: uppercase;
+      }
+
+      &-value {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      &-value * {
+        font-family: 'FiraSansExtraCondensed';
+      }
+    }
+  }
+
+  &__cloud:last-child {
+    margin-bottom: 100px;
+  }
+}

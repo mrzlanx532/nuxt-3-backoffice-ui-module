@@ -1,0 +1,106 @@
+&__table-container {
+  width: 100%;
+
+  &_is-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 200px;
+  }
+
+  &_loading {
+    opacity: 60%;
+    filter: blur(1px);
+  }
+}
+
+&__table {
+  width: 100%;
+  padding: 20px 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  box-shadow: var(--main-box-shadow);
+
+  &.--with-border {
+    border: 1px solid var(--color-3, #f3f3f3);
+  }
+
+  thead {
+    tr {
+      text-align: left;
+      background-color: var(--main-background-color, #ffffff);
+
+      .container {
+        display: flex;
+        align-items: center;
+        height: 18px;
+      }
+
+      .title {
+        white-space: nowrap;
+      }
+
+      .svg-container {
+        color: var(--color-2, #dbdbdb);
+        margin-left: 5px;
+
+        &_desc, &_asc {
+          svg {
+            color: var(--color-gradient-1, #DE4020);
+          }
+        }
+
+        &_asc {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: var(--color-gradient-2, orange);
+        }
+      }
+
+      th {
+        padding: 12px;
+        text-transform: uppercase;
+        color: grey;
+        border: none;
+        margin: 0;
+        user-select: none;
+
+        &.--min-width {
+          width: 1px;
+        }
+
+        &.--max-width-200 {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: var(--main-background-color, #ffffff);
+      border-top: 1px solid var(--main-border-color);
+
+      td {
+        font-family: "Roboto";
+        font-size: 13px;
+        padding: 12px;
+      }
+
+      td div {
+        font-family: "Roboto";
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--browser-table-tr-background-color);
+      }
+    }
+  }
+}

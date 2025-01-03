@@ -1,0 +1,74 @@
+@import "./normalize";
+@import "./variables";
+@import "./fonts";
+@import "./common";
+@import "./buttons";
+@import "./badges";
+@import "./links";
+@import "./login";
+@import "./spiner";
+@import "./side-menu";
+@import "./browser";
+@import "./browser-small";
+@import "./browser-detail";
+@import "./section";
+@import "./key-value-table";
+@import "./flex-table";
+@import "./error-page";
+@import "./detail";
+@import "./tabs";
+@import "./modal";
+@import "./form";
+@import "./grid";
+@import "./datepicker";
+@import "./switcher";
+@import "./clouds";
+
+@import "themes/default";
+//@import "themes/alt-1";
+//@import "themes/alt-2"; // Недоделана
+
+// @wangeditor
+
+@import '@wangeditor/editor/dist/css/style.css';
+
+body {
+  //overflow: hidden;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 250ms;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  background: var(--color-1, #ffffff);
+  width: 100%;
+
+  &__container {
+    padding: 20px 30px;
+    background: var(--page-container-background-color);
+    min-height: 100vh;
+  }
+
+  &__title {
+    margin: 0;
+    color: grey;
+    font-size: 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    user-select: none;
+    background: linear-gradient(to right, var(--color-gradient-1, #DE4020) 0%, var(--color-gradient-2, orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
