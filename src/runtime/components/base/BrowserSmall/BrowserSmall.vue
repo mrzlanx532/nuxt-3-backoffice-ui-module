@@ -1,5 +1,5 @@
 <script lang="ts">
-export { type IItem, type IConfigItem, type IColumn } from '~/composables/useBrowser'
+export { type IItem, type IConfigItem, type IColumn } from '../../../composables/useBrowser'
 
 export interface IBrowser {
   reset: () => void,
@@ -11,10 +11,10 @@ import { type Component, type Ref, getCurrentInstance, useSlots } from 'vue'
 import { FetchError } from 'ofetch'
 import { useNuxtApp, useBrowser } from '#imports'
 import Spinner from '~/components/Base/Spinner.vue'
-import BrowserTHeadTh from '~/components/Base/Browser/BrowserTHeadTh.vue'
-import BrowserSearchString from '~/components/Base/Browser/BrowserSearchString.vue'
-import BrowserPagination from '~/components/Base/BrowserSmall/BrowserPagination.vue'
-import { type IItem, type IConfigItem, type IColumn } from '~/composables/useBrowser'
+import BrowserTHeadTh from '../Browser/BrowserTHeadTh.vue'
+import BrowserSearchString from '../Browser/BrowserSearchString.vue'
+import BrowserPagination from './BrowserPagination.vue'
+import { type IItem, type IConfigItem, type IColumn } from '../../../composables/useBrowser'
 
 const {
   // Items

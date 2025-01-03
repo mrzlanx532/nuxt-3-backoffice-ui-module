@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IFilter } from '~/components/Base/Browser/Browser.vue'
+import type { IFilter } from '../Browser.vue'
 import type { Ref } from 'vue'
 type IValue = string | undefined
 

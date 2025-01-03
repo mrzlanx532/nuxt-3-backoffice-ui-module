@@ -45,12 +45,12 @@ import debounce from "lodash.debounce"
 import { useBrowser, useNuxtApp } from '#imports'
 import { FetchError } from 'ofetch'
 
-import BrowserSelectFilter from "./filters/BrowserSelectFilter.vue"
-import BrowserSelectSearchFilter from "./filters/BrowserSelectSearchFilter.vue"
-import BrowserInputFilter from "./filters/BrowserInputFilter.vue"
-import BrowserDateFilter from "./filters/BrowserDateFilter.vue"
-import BrowserBooleanFilter from "./filters/BrowserBooleanFilter.vue"
-import BrowserDatetimeFilter from './filters/BrowserDatetimeFilter.vue'
+import BrowserSelectFilter from "./Filters/BrowserSelectFilter.vue"
+import BrowserSelectSearchFilter from "./Filters/BrowserSelectSearchFilter.vue"
+import BrowserInputFilter from "./Filters/BrowserInputFilter.vue"
+import BrowserDateFilter from "./Filters/BrowserDateFilter.vue"
+import BrowserBooleanFilter from "./Filters/BrowserBooleanFilter.vue"
+import BrowserDatetimeFilter from './Filters/BrowserDatetimeFilter.vue'
 import BrowserSearchString from "./BrowserSearchString.vue"
 import BrowserPagination from "./BrowserPagination.vue"
 import BrowserPaginationCountSelect from "./BrowserPaginationCountSelect.vue"

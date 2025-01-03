@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import BaseLink from '~/components/Base/BaseLink.vue'
-import { type IConfigItem, type IItem } from '~/composables/useBrowser'
+import BaseLink from '../base/BaseLink.vue'
+import { type IConfigItem, type IItem } from '../../composables/useBrowser'
 import type { Component } from 'vue'
-import { useBrowser } from '~/composables/useBrowser'
+import { useBrowser } from '../../composables/useBrowser'
 
 const {
   isVueComponent,

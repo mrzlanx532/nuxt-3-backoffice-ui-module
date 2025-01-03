@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Badge from '@/components/Base/Badge.vue'
+import Badge from '../../Badge.vue'
 
 type IItem = Record<string, any>
 
