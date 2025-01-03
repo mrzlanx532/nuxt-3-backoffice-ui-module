@@ -29,7 +29,7 @@ const onClick = () => {
     <div class="checkbox__container" @click="onClick">
       <div class="checkbox__fake" :class="{'--checked': localValue}">
         <svg v-if="localValue">
-          <use xlink:href="/img/temp_sprite.svg#check_mark"/>
+          <use xlink:href="/img/sprite.svg#check_mark"/>
         </svg>
       </div>
     </div>

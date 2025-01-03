@@ -331,12 +331,12 @@ setLocalValues(props.modelValue)
         @click="onClickRemove"
     >
       <svg>
-        <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+        <use xlink:href="/img/sprite.svg#min_cross"/>
       </svg>
     </div>
     <div class="date__input-icon" @click="onClick">
       <svg>
-        <use xlink:href="/img/temp_sprite.svg#calendar"/>
+        <use xlink:href="/img/sprite.svg#calendar"/>
       </svg>
     </div>
     <div

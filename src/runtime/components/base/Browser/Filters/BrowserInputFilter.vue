@@ -154,7 +154,7 @@ const emitDoubleValue = (value1: IValue, value2: IValue) => {
               v-show="value1 !== undefined"
           >
             <svg>
-              <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+              <use xlink:href="/img/sprite.svg#min_cross"/>
             </svg>
           </div>
         </div>
@@ -177,7 +177,7 @@ const emitDoubleValue = (value1: IValue, value2: IValue) => {
               v-show="value2 !== undefined"
           >
             <svg>
-              <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+              <use xlink:href="/img/sprite.svg#min_cross"/>
             </svg>
           </div>
         </div>
@@ -198,7 +198,7 @@ const emitDoubleValue = (value1: IValue, value2: IValue) => {
             v-show="value1 !== undefined"
         >
           <svg>
-            <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+            <use xlink:href="/img/sprite.svg#min_cross"/>
           </svg>
         </div>
       </div>

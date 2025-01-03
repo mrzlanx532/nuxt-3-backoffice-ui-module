@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     },
   },
   // myModule: {},
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   app: {
     head: {

@@ -130,7 +130,7 @@ const onClick = () => {
         <div class="input-file__image-wrapper" v-if="files.length > 0 || modelValue?.original !== undefined" @click="onRemove">
           <template v-if="isUnrecognisedFile">
             <svg :class="{'--has-errors': errors && errors[0] }">
-              <use :xlink:href="'/img/temp_sprite.svg#file'"/>
+              <use :xlink:href="'/img/sprite.svg#file'"/>
             </svg>
             <p class="input-file__image-label">Загруженный файл</p>
           </template>

@@ -53,6 +53,43 @@
     <symbol id="triangle" viewBox="0 0 16 16" >
         <polygon points="8,11 3,6 13,6" fill="currentColor" />
     </symbol>
+    <symbol id="file" viewBox="0 0 80 80">
+      <path fill="#fff" d="M13.5 74.5L13.5 3.5 50.793 3.5 68.5 21.207 68.5 74.5z"/>
+      <path fill="currentColor" d="M50.586,4L68,21.414V74H14V4H50.586 M51,3H13v72h56V21L51,3L51,3z"/>
+      <g>
+        <path fill="#fff" d="M50.5 21.5L50.5 3.5 50.793 3.5 68.5 21.207 68.5 21.5z"/>
+        <path fill="currentColor" d="M51,4.414L67.586,21H51V4.414 M51,3h-1v19h19v-1L51,3L51,3z"/>
+      </g>
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="bevel">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="calendar_bold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="min_cross" viewBox="0 0 32 32" fill="currentColor">
+      <path d="M23.057 7.057l-16 16c-0.52 0.52-0.52 1.365 0 1.885s1.365 0.52 1.885 0l16-16c0.52-0.52 0.52-1.365 0-1.885s-1.365-0.52-1.885 0z"/>
+      <path d="M7.057 8.943l16 16c0.52 0.52 1.365 0.52 1.885 0s0.52-1.365 0-1.885l-16-16c-0.52-0.52-1.365-0.52-1.885 0s-0.52 1.365 0 1.885z"/>
+    </symbol>
+    <symbol id="time" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </symbol>
+    <symbol id="check_mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel">
+      <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+    </symbol>
+    <symbol id="empty_list" viewBox="0 0 24 24">
+      <path d="M14.707 0H4.5A2.503 2.503 0 0 0 2 2.5V24h20V7.293L14.707 0ZM15 1.707 20.293 7H15V1.707ZM3 23V2.5C3 1.673 3.673 1 4.5 1H14v7h7v15H3Zm10-3v.013a1 1 0 0 1-2 0V20a1 1 0 0 1 2 0Zm1.898-8.791c.337 1.304-.195 2.648-1.324 3.344-.672.416-1.074 1.079-1.074 1.774v.672h-1v-.672c0-1.044.579-2.026 1.549-2.625.765-.472 1.111-1.353.881-2.244a1.96 1.96 0 0 0-1.388-1.389 2.029 2.029 0 0 0-1.765.347A1.987 1.987 0 0 0 10 11.999H9c0-.935.424-1.8 1.165-2.373a3.013 3.013 0 0 1 2.627-.524 2.972 2.972 0 0 1 2.106 2.107Z" fill="currentColor"/>
+    </symbol>
 
     <!-- Notification Icons -->
     <symbol id="success" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">

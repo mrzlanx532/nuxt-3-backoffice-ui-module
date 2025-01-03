@@ -241,7 +241,7 @@ watch(
             @click.stop="onClickCancel()"
         >
           <svg>
-            <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+            <use xlink:href="/img/sprite.svg#min_cross"/>
           </svg>
         </div>
         <div

@@ -532,12 +532,12 @@ setLocalValues(props.modelValue)
     />
     <div class="date__input-remove-icon" @click="onClickRemove" v-if="localDate !== null" :class="{'--disabled': props.disabled}">
       <svg>
-        <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+        <use xlink:href="/img/sprite.svg#min_cross"/>
       </svg>
     </div>
     <div class="date__input-icon" @click="onClick">
       <svg>
-        <use xlink:href="/img/temp_sprite.svg#calendar"/>
+        <use xlink:href="/img/sprite.svg#calendar"/>
       </svg>
     </div>
     <div
@@ -556,12 +556,12 @@ setLocalValues(props.modelValue)
           <div class="date__nav-year" @click="onClickNavYear">{{ calendarNavYear }}</div>
           <div v-if="calendarIsOpen" class="date__nav-time" @click="onClickNavTime">
             <svg>
-              <use xlink:href="/img/temp_sprite.svg#time"/>
+              <use xlink:href="/img/sprite.svg#time"/>
             </svg>
           </div>
           <div v-if="timeIsOpen" class="date__nav-calendar" :class="{'--active': timeIsOpen}" @click="onClickNavCalendar">
             <svg>
-              <use xlink:href="/img/temp_sprite.svg#calendar_bold"/>
+              <use xlink:href="/img/sprite.svg#calendar_bold"/>
             </svg>
           </div>
         </div>

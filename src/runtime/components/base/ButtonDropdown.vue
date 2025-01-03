@@ -101,7 +101,7 @@ const onMouseOut = () => {
       @mouseout="onMouseOut"
   >
     <svg>
-      <use xlink:href="/img/temp_sprite.svg#more"/>
+      <use xlink:href="/img/sprite.svg#more"/>
     </svg>
   </div>
   <teleport to="body">

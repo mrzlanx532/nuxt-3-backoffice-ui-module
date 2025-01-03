@@ -326,7 +326,7 @@ defineExpose({
             >
               <div>
                 <svg>
-                  <use xlink:href="/img/temp_sprite.svg#empty_list"/>
+                  <use xlink:href="/img/sprite.svg#empty_list"/>
                 </svg>
                 <span class="browser-small__empty-list-header">Список пуст</span>
                 <span class="browser-small__empty-list-description">По вашему запросу ничего не найдено</span>

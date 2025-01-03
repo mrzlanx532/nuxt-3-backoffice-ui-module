@@ -238,7 +238,7 @@ onUnmounted(() => {
               </div>
               <div class="select__active-select-option-cancel" @click.stop="onClickCancel(filter.id, index as number)">
                 <svg>
-                  <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+                  <use xlink:href="/img/sprite.svg#min_cross"/>
                 </svg>
               </div>
             </div>
@@ -250,7 +250,7 @@ onUnmounted(() => {
              @click.stop="onCrossClick(filter.id)"
         >
           <svg>
-            <use xlink:href="/img/temp_sprite.svg#min_cross"/>
+            <use xlink:href="/img/sprite.svg#min_cross"/>
           </svg>
         </div>
         <div
