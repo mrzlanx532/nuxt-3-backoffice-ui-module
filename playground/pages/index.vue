@@ -7,6 +7,7 @@ definePageMeta({
 
 <template>
   <div>
-    hello
+    <h3>Главное</h3>
+    <p>Для управления используйте меню слева</p>
   </div>
 </template>
