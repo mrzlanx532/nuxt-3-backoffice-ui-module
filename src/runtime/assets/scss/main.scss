@@ -23,14 +23,11 @@
 @import "./datepicker";
 @import "./switcher";
 @import "./clouds";
+@import './wangeditor-styles';
 
 @import "themes/default";
 //@import "themes/alt-1";
 //@import "themes/alt-2"; // Недоделана
-
-// @wangeditor
-
-@import '@wangeditor/editor/dist/css/style.css';
 
 body {
   //overflow: hidden;
