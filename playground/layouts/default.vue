@@ -12,8 +12,23 @@ interface IUser {
 
 const items = [
   {
-    name: 'Ручки',
-    link: '/pencils',
+    name: 'Объекты',
+    link: '/objects',
+  },
+  {
+    name: 'Пользователи',
+    icon: '/img/menu_icons_sprite.svg#user',
+    children: [
+      {
+        name: 'Каталог пользователей',
+        link: '/users',
+        icon: '/img/menu_icons_sprite.svg#user',
+      },
+    ]
+  },
+  {
+    name: 'Менеджеры',
+    link: '/managers',
     icon: '/img/menu_icons_sprite.svg#users',
   },
 ]

@@ -1,6 +1,8 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponent } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addComponent, addImports } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 import { type NitroConfig } from 'nitropack'
+import * as fs from 'node:fs/promises'
+import * as path from 'node:path'
 
 export interface ModuleOptions {}
 
@@ -25,6 +27,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.push(resolve('./runtime/assets/css/style.css'))
     nuxt.options.css.push(resolve('./runtime/assets/scss/main.scss'))
 
+    await addImportsByFolderRecursively(resolve('./runtime/composables'))
+
     await addComponent({
       name: 'Notification',
       filePath: resolve('./runtime/components/Notification.vue'),
@@ -43,3 +47,44 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/plugins'))
   },
 })
+
+async function addImportsByFolderRecursively(folderPath: string) {
+  const files = await getFilesRecursively(folderPath)
+
+  for (const file of files) {
+
+    const filename = path.parse(file).name
+
+    await addImports({
+      name: filename,
+      as: filename,
+      from: file
+    })
+  }
+}
+
+async function getFilesRecursively(dir: string): Promise<string[]> {
+  let files: string[] = [];
+
+  try {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        const subFiles = await getFilesRecursively(fullPath);
+        files = files.concat(subFiles);
+
+      } else if (entry.isFile()) {
+        files.push(fullPath);
+      }
+    }
+
+    return files
+
+  } catch(error) {
+    console.error("Failed to read directory:", error);
+    return [];
+  }
+}
