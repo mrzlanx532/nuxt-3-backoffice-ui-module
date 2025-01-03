@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import type { defaultProps } from '~/composables/useForm'
+import type { defaultProps } from '../../../src/runtime/composables/useForm'
 
 const props = defineProps<defaultProps>()
 

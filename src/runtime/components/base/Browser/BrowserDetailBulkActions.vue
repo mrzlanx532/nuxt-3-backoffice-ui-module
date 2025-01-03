@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type Component, useSlots } from 'vue'
-import type { IConfigItem } from '~/composables/useBrowser'
-import BrowserCheckbox from '~/components/Base/Browser/BrowserCheckbox.vue'
+import type { IConfigItem } from '../../../composables/useBrowser'
+import BrowserCheckbox from './BrowserCheckbox.vue'
 
 const {
   callPreset,

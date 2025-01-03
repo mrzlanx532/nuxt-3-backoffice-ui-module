@@ -1,5 +1,5 @@
 <script lang="ts">
-export { type IItem, type IConfigItem } from '~/composables/useBrowser'
+export { type IItem, type IConfigItem } from '../../../composables/useBrowser'
 
 export interface IBrowser {
   reset: (isUpdateItem?: boolean) => void,
@@ -39,27 +39,27 @@ export interface IFilter {
 </script>
 
 <script setup lang="ts">
-import { type Ref, type Component, useSlots, defineComponent, h } from "vue";
+import { type Ref, type Component, useSlots } from "vue";
 import type { DebouncedFunc } from "lodash-es"
 import debounce from "lodash.debounce"
 import { useBrowser, useNuxtApp } from '#imports'
 import { FetchError } from 'ofetch'
 
-import BrowserSelectFilter from "~/components/Base/Browser/Filters/BrowserSelectFilter.vue"
-import BrowserSelectSearchFilter from "~/components/Base/Browser/Filters/BrowserSelectSearchFilter.vue"
-import BrowserInputFilter from "~/components/Base/Browser/Filters/BrowserInputFilter.vue"
-import BrowserDateFilter from "~/components/Base/Browser/Filters/BrowserDateFilter.vue"
-import BrowserBooleanFilter from "~/components/Base/Browser/Filters/BrowserBooleanFilter.vue"
-import BrowserSearchString from "@/components/Base/Browser/BrowserSearchString.vue"
-import BrowserPagination from "@/components/Base/Browser/BrowserPagination.vue"
-import BrowserPaginationCountSelect from "@/components/Base/Browser/BrowserPaginationCountSelect.vue"
-import BrowserTHeadTh from "@/components/Base/Browser/BrowserTHeadTh.vue";
-import Spinner from "@/components/Base/Spinner.vue"
-import BrowserDetail from "@/components/Base/Browser/BrowserDetail.vue";
-import { type IItem, type IConfigItem, type IColumn } from '~/composables/useBrowser'
-import BrowserDetailBulkActions from '~/components/Base/Browser/BrowserDetailBulkActions.vue'
-import BrowserCheckbox from '~/components/Base/Browser/BrowserCheckbox.vue'
-import BrowserDatetimeFilter from '~/components/Base/Browser/Filters/BrowserDatetimeFilter.vue'
+import BrowserSelectFilter from "./filters/BrowserSelectFilter.vue"
+import BrowserSelectSearchFilter from "./filters/BrowserSelectSearchFilter.vue"
+import BrowserInputFilter from "./filters/BrowserInputFilter.vue"
+import BrowserDateFilter from "./filters/BrowserDateFilter.vue"
+import BrowserBooleanFilter from "./filters/BrowserBooleanFilter.vue"
+import BrowserDatetimeFilter from './filters/BrowserDatetimeFilter.vue'
+import BrowserSearchString from "./BrowserSearchString.vue"
+import BrowserPagination from "./BrowserPagination.vue"
+import BrowserPaginationCountSelect from "./BrowserPaginationCountSelect.vue"
+import BrowserTHeadTh from "./BrowserTHeadTh.vue"
+import Spinner from "./../Spinner.vue"
+import BrowserDetail from "./BrowserDetail.vue"
+import { type IItem, type IConfigItem, type IColumn } from '../../../composables/useBrowser'
+import BrowserDetailBulkActions from './BrowserDetailBulkActions.vue'
+import BrowserCheckbox from './BrowserCheckbox.vue'
 
 const {
   // Items

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WangEditor from '~/components/WangEditor.vue'
+import WangEditor from '../WangEditor.vue'
 import type { OutputData } from '@editorjs/editorjs'
 
 const emit = defineEmits(['update:modelValue'])

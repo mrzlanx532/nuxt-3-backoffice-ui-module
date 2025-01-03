@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import 'moment/dist/locale/ru'
-import DatetimePicker from '@/components/Base/Datepicker/DatetimePicker.vue'
-import type { IPayload } from '@/components/Base/Datepicker/types'
+import DatetimePicker from '../../base/Datepicker/DatetimePicker.vue'
+import type { IPayload } from '../../base/Datepicker/types'
 
 const emit = defineEmits(['update:modelValue'])
 

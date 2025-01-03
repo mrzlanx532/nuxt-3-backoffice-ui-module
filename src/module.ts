@@ -29,6 +29,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     await addImportsByFolderRecursively(resolve('./runtime/composables'))
 
+    addPlugin(resolve('./runtime/plugins'))
+
     await addComponent({
       name: 'Notification',
       filePath: resolve('./runtime/components/Notification.vue'),
@@ -43,8 +45,6 @@ export default defineNuxtModule<ModuleOptions>({
       name: 'SideMenu',
       filePath: resolve('./runtime/components/base/SideMenu.vue'),
     })
-
-    addPlugin(resolve('./runtime/plugins'))
   },
 })
 
