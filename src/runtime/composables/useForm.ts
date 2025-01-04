@@ -105,6 +105,10 @@ interface IInputFile extends IFormComponent {
 type TFormDataItemInput = ISelect | ISelectWrap | IInput | IDatetime | IDate | IInputFile | ITextArea | ICheckbox
 type TFormDataItemOutput = IFormComponent & { component: Component, componentData: any }
 
+const isFetchError = (instance): FetchError => {
+  return instance.name === 'FetchError'
+}
+
 export interface defaultProps {
     data: {
         formResponse: {
@@ -171,7 +175,7 @@ export const useForm = () => {
                 emit('modal:resolve')
 
             } catch (err) {
-                if (err instanceof FetchError) {
+                if (isFetchError(err)) {
                     if (err.status === 422 && err.data.errors) {
                         errors.value = err.data.errors
 
@@ -371,10 +375,10 @@ export const useForm = () => {
                 emit('modal:resolve')
 
             } catch (err) {
-                if (err instanceof FetchError) {
-                    if (err.status === 422 && err.data.errors) {
-                        errors.value = err.data.errors
-                    }
+              if (isFetchError(err)) {
+                  if (err.status === 422 && err.data.errors) {
+                      errors.value = err.data.errors
+                  }
                 }
             }
         }
