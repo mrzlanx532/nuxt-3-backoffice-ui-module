@@ -4,14 +4,24 @@ import { type NitroConfig } from 'nitropack'
 import * as fs from 'node:fs/promises'
 import * as path from 'node:path'
 
-export interface ModuleOptions {}
+enum Theme {
+  DEFAULT = 'default',
+  ALT1 = 'alt1',
+  ALT2 = 'alt2',
+}
+
+export interface ModuleOptions {
+  theme?: keyof typeof Theme
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'backoffice-ui',
     configKey: 'backofficeUI',
   },
-  defaults: {},
+  defaults: {
+    theme: Theme.DEFAULT
+  },
   async setup(_options: ModuleOptions, nuxt: Nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
@@ -26,6 +36,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.css.push(resolve('./runtime/assets/css/style.css'))
     nuxt.options.css.push(resolve('./runtime/assets/scss/main.scss'))
+    nuxt.options.css.push(resolve(`./runtime/assets/scss/themes/${_options.theme}.scss`))
 
     await addImportsByFolderRecursively(resolve('./runtime/composables'))
 
