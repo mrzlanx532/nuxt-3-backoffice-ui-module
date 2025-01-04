@@ -10,7 +10,7 @@ interface IBlogPost {
 }
 
 const props = defineProps<{
-  item: IBlogPost
+  item?: IBlogPost
 }>()
 </script>
 

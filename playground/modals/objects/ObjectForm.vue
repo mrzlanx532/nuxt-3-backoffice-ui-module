@@ -43,7 +43,7 @@ const {
       }),
       datetime({
         name: 'example_datetime',
-        label: 'Date',
+        label: 'Datetime',
         class: '--full'
       }),
       editor({
@@ -58,7 +58,7 @@ const {
       }),
       inputFile({
         name: 'example_input_file',
-        label: 'Input',
+        label: 'InputFile',
         class: '--full',
       }),
       select({
