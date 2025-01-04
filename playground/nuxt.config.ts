@@ -4,6 +4,10 @@ export default defineNuxtConfig({
     '../src/module',
   ],
 
+  css: [
+    '../src/runtime/assets/scss/themes/default.scss',
+  ],
+
   laravelAuth: {
     domain: 'http://backoffice-api.example-laravel-backend-for-nuxt.ru',
     redirects: {
