@@ -116,6 +116,12 @@ const sections = ref([
       {
         title: 'cover',
         name: 'cover',
+        component: {
+          component: Picture,
+          width: 200,
+          'max-width': 200,
+          height: 'auto'
+        }
       },
     ]
   }, {

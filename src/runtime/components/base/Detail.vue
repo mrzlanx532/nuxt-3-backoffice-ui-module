@@ -3,6 +3,7 @@ import BaseLink from '../base/BaseLink.vue'
 import { type IConfigItem, type IItem } from '../../composables/useBrowser'
 import type { Component } from 'vue'
 import { useBrowser } from '../../composables/useBrowser'
+import Badge from '../../../runtime/components/base/Badge.vue'
 
 const {
   isVueComponent,
@@ -79,7 +80,12 @@ const props = withDefaults(defineProps<{
             </template>
             <div v-else-if="row.isRaw" v-html="item[row.name]"/>
             <template v-else>
-              {{ item[row.name] }}
+              <template v-if="item[row.name]">
+                {{ item[row.name] }}
+              </template>
+              <template v-else>
+                <Badge class="--default" title="Не заполнено"></Badge>
+              </template>
             </template>
           </div>
         </div>
