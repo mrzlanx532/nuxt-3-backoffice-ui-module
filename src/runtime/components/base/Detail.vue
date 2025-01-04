@@ -67,7 +67,7 @@ const props = withDefaults(defineProps<{
                 :column="row"
             />
             <component
-                v-else-if="row.component && isVueComponent(row.component.component)"
+                v-else-if="row.component && isVueComponent(row.component.component) && item[row.name] !== undefined && item[row.name] !== null"
                 :is="getSubComponent(row.component)"
                 :item="item"
                 :column="row"
@@ -78,13 +78,13 @@ const props = withDefaults(defineProps<{
             <template v-else-if="row.toFormat">
               {{ row.toFormat(item) }}
             </template>
-            <div v-else-if="row.isRaw" v-html="item[row.name]"/>
+            <div v-else-if="row.isRaw && item[row.name]" v-html="item[row.name]"/>
             <template v-else>
-              <template v-if="item[row.name]">
+              <template v-if="item[row.name] !== undefined && item[row.name] !== null">
                 {{ item[row.name] }}
               </template>
               <template v-else>
-                <Badge class="--default" title="Не заполнено"></Badge>
+                <Badge class="--default" title="Не заполнено" />
               </template>
             </template>
           </div>
