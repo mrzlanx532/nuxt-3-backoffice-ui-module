@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import Section from '../../../../src/runtime/components/base/Section.vue'
 
-const props = defineProps({
-  item: {
-    type: Object
-  }
-})
+interface IBlogPost {
+  cover: {
+    original: string
+  } | null
+  content_short: string | null,
+  content: string | null
+}
+
+const props = defineProps<{
+  item: IBlogPost
+}>()
 </script>
 
 <template>
