@@ -14,11 +14,12 @@ const items = [
   {
     name: 'Объекты',
     link: '/objects',
+    icon: '/img/menu_icons_sprite.svg#home'
   },
   {
     name: 'Блог',
     link: '/blog',
-    icon: '/img/menu_icons_sprite.svg#users',
+    icon: '/img/menu_icons_sprite.svg#document',
   },
   {
     name: 'Пользователи',
