@@ -4,6 +4,8 @@ import Button from '../../../src/runtime/components/base/Button.vue'
 import Browser from '../../../src/runtime/components/base/Browser/Browser.vue'
 import Picture from '../../../src/runtime/components/base/Browser/ColumnComponents/Picture.vue'
 import ObjectForm from '~/modals/objects/ObjectForm.vue'
+import Section from '../../../src/runtime/components/base/Section.vue'
+import FlexTable from '../../../src/runtime/components/base/FlexTable/FlexTable.vue'
 
 definePageMeta({
   middleware: ['auth']
@@ -70,6 +72,29 @@ const columns = shallowRef([
   },
 ])
 
+const common = ref([
+  {
+    name: 'example_date',
+    title: 'Date',
+    class: 6
+  },
+  {
+    name: 'example_datetime',
+    title: 'Datetime',
+    class: 6
+  },
+  {
+    name: 'example_select',
+    title: 'Select',
+    class: 6
+  },
+  {
+    name: 'example_select_wrap',
+    title: 'SelectWrap',
+    class: 6
+  },
+])
+
 </script>
 
 <template>
@@ -126,7 +151,14 @@ const columns = shallowRef([
       </div>
     </template>
     <template #browserDetailContent>
-      {{ item ? item.id : undefined }}
+      <Section>
+        <template v-slot:header>
+          Общее
+        </template>
+        <template v-slot:content>
+          <FlexTable :config="common" :item="item"/>
+        </template>
+      </Section>
     </template>
   </Browser>
 </template>
