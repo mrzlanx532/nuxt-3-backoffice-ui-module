@@ -1,3 +1,10 @@
+.browser .browser-detail__content {
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%;
+  background: var(--color-1, #ffffff);
+}
+
 .browser-detail {
   position: fixed;
   top: 74px;
@@ -91,11 +98,6 @@
     }
   }
 
-  &__content {
-    padding: 20px;
-    overflow-y: auto;
-  }
-
   &__header-title {
     font-size: 24px;
   }
@@ -152,11 +154,6 @@
       width: 28px;
       color: var(--color-gradient-1, #DE4020);
     }
-  }
-
-  &__content {
-    height: 100%;
-    background: var(--color-1, #ffffff);
   }
 
   &__empty-bulk-actions-items-label {
