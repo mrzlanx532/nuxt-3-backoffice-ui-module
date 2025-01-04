@@ -16,6 +16,11 @@ const items = [
     link: '/objects',
   },
   {
+    name: 'Блог',
+    link: '/blog',
+    icon: '/img/menu_icons_sprite.svg#users',
+  },
+  {
     name: 'Пользователи',
     icon: '/img/menu_icons_sprite.svg#user',
     children: [

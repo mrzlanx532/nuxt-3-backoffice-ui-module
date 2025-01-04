@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useNuxtApp } from '#app'
-import ExampleModal from '~/modals/ExampleModal.vue'
 import { definePageMeta } from '#imports'
+import ExampleModal from '~/modals/test/ExampleModal.vue'
 
 definePageMeta({
   layout: 'test',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Component, Ref } from 'vue'
+import { type Component, type Ref, useTemplateRef } from 'vue'
 
 export interface ITabItem {
   title: string,
