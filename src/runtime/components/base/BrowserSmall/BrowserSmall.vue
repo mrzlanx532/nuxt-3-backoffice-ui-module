@@ -57,7 +57,7 @@ const props = withDefaults(defineProps<Props>(), {
   columns: () => [] as IColumn[],
 })
 
-enum FilterType {
+const enum FilterType {
   // noinspection JSUnusedGlobalSymbols
   SELECT = 'SELECT',
   SELECT_SEARCH = 'SELECT_SEARCH',
@@ -81,7 +81,7 @@ interface IRequestParams {
 interface IFilter {
   id: string,
   title: string,
-  type: keyof typeof FilterType,
+  type: FilterType,
   options?: {
     id: string,
     title: string,

@@ -7,7 +7,7 @@ export interface IBrowser {
   closeDetail: () => void
 }
 
-enum FilterType {
+const enum FilterType {
   SELECT = 'SELECT',
   SELECT_SEARCH = 'SELECT_SEARCH',
   INPUT = 'INPUT',
@@ -29,7 +29,7 @@ export interface IFilterConfig {
 export interface IFilter {
   id: string
   title: string
-  type: keyof typeof FilterType
+  type: FilterType
   options?: {
     id: string
     title: string

@@ -4,14 +4,14 @@ import { type NitroConfig } from 'nitropack'
 import * as fs from 'node:fs/promises'
 import * as path from 'node:path'
 
-enum Theme {
+const enum Theme {
   DEFAULT = 'default',
   ALT1 = 'alt1',
   ALT2 = 'alt2',
 }
 
 export interface ModuleOptions {
-  theme?: keyof typeof Theme
+  theme: Theme
 }
 
 export default defineNuxtModule<ModuleOptions>({
