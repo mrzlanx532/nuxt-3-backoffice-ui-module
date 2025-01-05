@@ -91,7 +91,9 @@ const closeOpenMenuItem = (menuItem: null | string) => {
   }, 100)
 
   setTimeout(() => {
-    sectionsEl.value!.scrollable_manager.updateScroll()
+    if (sectionsEl.value) {
+      sectionsEl.value.scrollable_manager.updateScroll()
+    }
   }, 400)
 }
 

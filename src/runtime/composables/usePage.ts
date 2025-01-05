@@ -1,5 +1,5 @@
 import { useNuxtApp, useAsyncData, useRouter } from '#imports'
-import type { Component, Ref } from 'vue'
+import { type Component, type Ref, ref } from 'vue'
 import { type IItem, type IBrowser } from '#backoffice-ui/components/Browser.vue';
 import type { RouteLocationAsPathGeneric, RouteLocationAsRelativeGeneric } from '#vue-router'
 import { FetchError } from 'ofetch'
