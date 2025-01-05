@@ -3,7 +3,7 @@ export { type IItem, type IConfigItem, type IColumn } from '#backoffice-ui/compo
 </script>
 
 <script setup lang="ts">
-import { type Component, type Ref, useSlots } from 'vue'
+import { type Component, type Ref, useSlots, ref, watch, onMounted } from 'vue'
 import { FetchError } from 'ofetch'
 import { useNuxtApp, useBrowser } from '#imports'
 import BrowserTHeadTh from '#backoffice-ui/components/Browser/BrowserTHeadTh.vue'

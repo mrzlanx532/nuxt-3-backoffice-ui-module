@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSlots } from 'vue'
+import { useSlots, ref, watch } from 'vue'
 import { useNuxtApp } from '#imports'
 
 const emit = defineEmits([

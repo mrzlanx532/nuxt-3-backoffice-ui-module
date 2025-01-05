@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, type Ref } from 'vue'
+import { nextTick, type Ref, ref, watch } from 'vue'
 import { useNuxtApp } from '#imports'
 import { default as mimeTypeMapper } from '#backoffice-ui/mimes.json'
 

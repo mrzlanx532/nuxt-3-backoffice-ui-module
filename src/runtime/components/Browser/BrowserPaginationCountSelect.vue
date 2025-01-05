@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
+import { type Ref, ref, watch, onMounted } from 'vue'
 
 const props = defineProps<{
   options: number[],

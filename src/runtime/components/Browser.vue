@@ -39,7 +39,7 @@ export interface IFilter {
 </script>
 
 <script setup lang="ts">
-import { type Ref, type Component, useSlots } from "vue";
+import { type Ref, type Component, useSlots, ref, onMounted } from "vue";
 import type { DebouncedFunc } from "lodash-es"
 import debounce from "lodash.debounce"
 import { useBrowser, useNuxtApp } from '#imports'

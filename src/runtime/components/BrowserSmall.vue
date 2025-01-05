@@ -7,7 +7,7 @@ export interface IBrowser {
 </script>
 
 <script setup lang="ts">
-import { type Component, type Ref, getCurrentInstance, useSlots } from 'vue'
+import { type Component, type Ref, getCurrentInstance, useSlots, ref, watch, onMounted } from 'vue'
 import { FetchError } from 'ofetch'
 import { useNuxtApp, useBrowser } from '#imports'
 import BrowserTHeadTh from '#backoffice-ui/components/Browser/BrowserTHeadTh.vue'
