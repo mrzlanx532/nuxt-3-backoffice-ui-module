@@ -4,8 +4,6 @@
   --color-gradient-2: #009f5e;
   --color-gradient-intermediate: #008871;
 
-  --main-background-color: #eafffe;
-
   /* Document Scroll */
   --document-scroll-background: linear-gradient(to bottom, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
   --document-scroll-track-background: #dbdbdb;
@@ -22,18 +20,7 @@
   --login-form-background-color: var(--main-background-color);
 
   /* Page container */
-  --page-container-background-color: linear-gradient(to top right, #74EBD5 0%, #9FACE6 100%);
-
-  --side-menu-background-color: var(--main-background-color);
-
-
-
-
-
-
-
-
-
+  --page-container-background-color: linear-gradient(to top right, rgba(251, 218, 97, 0.32) 0%, rgba(255, 90, 205, 0.3) 100%);
 
   /* Side menu */
   --side-menu-item-border-bottom: 1px solid var(--main-border-color);

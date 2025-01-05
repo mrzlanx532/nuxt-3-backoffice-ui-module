@@ -35,8 +35,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     nuxt.options.css.push(resolve('./runtime/assets/css/style.css'))
-    nuxt.options.css.push(resolve('./runtime/assets/scss/main.scss'))
-    nuxt.options.css.push(resolve(`./runtime/assets/scss/themes/${_options.theme}.scss`))
+    nuxt.options.css.push(resolve(`./runtime/assets/css/themes/${_options.theme}.css`))
 
     await addImportsByFolderRecursively(resolve('./runtime/composables'))
 

@@ -10,8 +10,5 @@
   "dependencies": {
     "@mrzlanx532/nuxt-3-laravel-auth-module": "^0.0.30",
     "nuxt": "^3.12.1"
-  },
-  "devDependencies": {
-    "sass": "^1.83.0"
   }
 }

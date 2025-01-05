@@ -1,0 +1,51 @@
+.link {
+  text-decoration: none;
+}
+
+.link.--special {
+  color: var(--color-gradient-intermediate);
+}
+
+.link.--special:hover {
+  color: var(--color-gradient-1);
+}
+
+.link.--default {
+  color: var(--default-btn-color);
+}
+
+.link.--default:hover {
+  color: var(--default-btn-color-active);
+}
+
+.link.--primary {
+  color: var(--primary-btn-color);
+}
+
+.link.--primary:hover {
+  color: var(--primary-btn-color-active);
+}
+
+.link.--success {
+  color: var(--success-btn-color);
+}
+
+.link.--success:hover {
+  color: var(--success-btn-color-active);
+}
+
+.link.--danger {
+  color: var(--danger-btn-color);
+}
+
+.link.--danger:hover {
+  color: var(--danger-btn-color);
+}
+
+.link.--warning {
+  color: var(--warning-btn-color);
+}
+
+.link.--warning:hover {
+  color: var(--warning-btn-color-active);
+}

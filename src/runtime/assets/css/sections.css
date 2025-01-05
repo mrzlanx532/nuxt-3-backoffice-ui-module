@@ -1,0 +1,30 @@
+.section > * {
+  font-family: Roboto;
+}
+
+.section__header {
+  font-size: 16px;
+  color: black;
+}
+
+.section__content {
+  font-size: 12px;
+  color: var(--color-4);
+}
+
+.section__content:nth-child(2) {
+  margin-top: 20px;
+}
+
+.section__content img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.section__group > * {
+  margin-top: 20px;
+}
+
+.section__group > *:first-of-type {
+  margin-top: 0;
+}

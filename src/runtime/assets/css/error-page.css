@@ -1,0 +1,37 @@
+.error-page {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.error-page h1 {
+  font-family: FiraSansExtraCondensed;
+  color: var(--color-4);
+  font-size: 28px;
+  margin: 0 0 20px 0;
+}
+
+.error-page p {
+  color: var(--color-4);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.error-page a {
+  font-family: FiraSansExtraCondensed;
+  color: var(--color-4);
+  background: linear-gradient(to right, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-page a:hover {
+  opacity: 0.8;
+}
