@@ -1,5 +1,5 @@
 import type { ReturnType } from 'birpc'
-import { type Component, ref, shallowRef } from 'vue'
+import { type Component, ref, shallowRef, watch } from 'vue'
 
 export interface ITabItem {
     title: string,
