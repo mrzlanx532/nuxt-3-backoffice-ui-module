@@ -39,6 +39,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.push(resolve('./runtime/assets/css/style.css'))
     nuxt.options.css.push(resolve(`./runtime/assets/css/themes/${_options.theme}.css`))
 
+    nuxt.options.alias['#backoffice-ui-types'] = resolve('./runtime/types.ts')
+
     await addImportsByFolderRecursively(resolve('./runtime/composables'))
 
     addPlugin(resolve('./runtime/plugins'))
