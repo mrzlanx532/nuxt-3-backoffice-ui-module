@@ -1,4 +1,4 @@
-import moment from 'moment/moment'
+import { default as moment } from 'moment'
 import { type Component, defineComponent, h, type Ref } from 'vue'
 
 export type IItem = {[key: string]: any}
