@@ -1,0 +1,178 @@
+.side-menu {
+  width: 240px;
+  height: 100vh;
+  background-color: var(--side-menu-background-color);
+  -webkit-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: var(--main-box-shadow);
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
+.side-menu .--without-icon {
+  margin-left: 24px;
+}
+.side-menu__icon {
+  width: 14px;
+  height: 14px;
+  color: black;
+}
+.side-menu__logo-container {
+  cursor: pointer;
+}
+.side-menu__logo-img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.side-menu__header {
+  flex-grow: 1;
+  outline: none;
+}
+.side-menu__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.side-menu__footer {
+  padding: 40px 30px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+.side-menu__footer img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  opacity: 0.8;
+}
+.side-menu__footer .username {
+  font-size: 16px;
+  padding-bottom: 5px;
+  text-transform: none;
+  user-select: none;
+}
+.side-menu__footer .role {
+  font-size: 12px;
+  padding-bottom: 30px;
+  text-transform: none;
+  color: grey;
+  user-select: none;
+}
+.side-menu__footer a {
+  font-family: FiraSansExtraCondensed;
+  user-select: none;
+}
+.side-menu__footer a:hover {
+  cursor: pointer;
+  color: #606060;
+}
+.side-menu__sub-sections-list {
+  background: var(--side-menu-sub-section-list-background-color);
+  max-height: 0;
+  transition-property: max-height;
+  transition-duration: 1.5s;
+  position: relative;
+  visibility: collapse;
+  overflow-y: hidden;
+  will-change: max-height;
+}
+.side-menu__sub-sections-list_open {
+  max-height: 100vh;
+  z-index: 1;
+  visibility: inherit;
+}
+.side-menu__sub-sections-list_closing {
+  max-height: 0;
+  transition-duration: 400ms, 10ms;
+  z-index: 1;
+  visibility: inherit;
+}
+.side-menu__sub-sections-list-item {
+  font-size: 14px;
+  user-select: none;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  padding: 10px 0 10px 20px;
+}
+.side-menu__sub-sections-list-item :nth-child(2) {
+  margin-left: 10px;
+}
+.side-menu__sub-sections-list-item:hover {
+  color: var(--side-menu-list-item-hover-color, #606060);
+}
+.side-menu__sub-sections-list-item:hover svg, .side-menu__sub-sections-list-item:hover > a {
+  color: var(--side-menu-list-item-hover-color, #606060);
+}
+.side-menu__sub-sections-list-item a {
+  font-family: "FiraSansExtraCondensed";
+  text-decoration: none;
+  color: black;
+}
+.side-menu__sub-sections-list-item:hover {
+  cursor: pointer;
+  color: #606060;
+}
+.side-menu__sub-sections-list-item a {
+  display: block;
+}
+.side-menu__sections {
+  overflow-y: auto;
+}
+.side-menu__sections-list-item {
+  background: var(--side-menu-background-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  user-select: none;
+  font-family: "FiraSansExtraCondensed";
+  position: relative;
+  border-left: none;
+  z-index: 2;
+  border-bottom: var(--side-menu-item-border-bottom);
+  outline: none;
+}
+.side-menu__sections-list-item > a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000000;
+  font-family: "FiraSansExtraCondensed";
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  flex-direction: row;
+}
+.side-menu__sections-list-item > a :nth-child(2) {
+  margin-left: 10px;
+}
+.side-menu__sections-list-item:hover {
+  color: var(--side-menu-list-item-hover-color, #606060);
+  cursor: pointer;
+}
+.side-menu__sections-list-item:hover svg, .side-menu__sections-list-item:hover > a {
+  color: var(--side-menu-list-item-hover-color, #606060);
+}
+.side-menu__sections-list-item-title {
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  flex-direction: row;
+}
+.side-menu__sections-list-item-title :nth-child(2) {
+  margin-left: 10px;
+}
+.side-menu__sections-list-item-arrow::after {
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  position: absolute;
+  top: 1.2em;
+  right: 20px;
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+.side-menu__sections-list-item-arrow_rotated::after {
+  transform: rotate(180deg);
+}

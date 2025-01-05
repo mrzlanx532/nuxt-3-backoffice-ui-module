@@ -1,0 +1,191 @@
+.browser-small {
+  min-height: 100%;
+}
+
+.browser-small.--is-disabled-thead tr:first-child {
+  border-top: none;
+}
+
+.browser-small__paginator {
+  display: flex;
+  justify-content: space-between;
+}
+
+.browser-small__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.browser-small__header-left {
+  display: inline-flex;
+  justify-items: center;
+  font-size: 18px;
+}
+
+.browser-small__total {
+  user-select: none;
+  margin-top: 10px;
+  margin-left: 1px;
+  font-size: 14px;
+  color: var(--color-4);
+}
+
+.browser-small__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.browser-small__container.--empty {
+  display: block;
+}
+
+.browser-small__actions {
+  float: right;
+  margin-left: 10px;
+}
+
+.browser-small__empty-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  color: var(--color-6);
+  user-select: none;
+  border-radius: 5px;
+}
+
+.browser-small__empty-list div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--color-6);
+  opacity: 0.6;
+}
+
+.browser-small__empty-list div svg {
+  width: 40px;
+  height: 40px;
+}
+
+.browser-small__empty-list:hover {
+  cursor: default;
+}
+
+.browser-small__empty-list-header {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.browser-small__empty-list-description {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.browser-small__spinner-container {
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
+  align-items: center;
+}
+
+.browser-small__table {
+  margin-top: 10px;
+  width: 100%;
+  padding: 20px 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid var(--color-3);
+}
+
+.browser-small__table.--loading {
+  opacity: 60%;
+  filter: blur(1px);
+}
+
+.browser-small__table thead tr {
+  text-align: left;
+  background-color: var(--color-1);
+}
+
+.browser-small__table thead tr .container {
+  display: flex;
+  align-items: center;
+  height: 18px;
+}
+
+.browser-small__table thead tr .title {
+  white-space: nowrap;
+}
+
+.browser-small__table thead tr .svg-container {
+  color: var(--color-2);
+  margin-left: 5px;
+}
+
+.browser-small__table thead tr .svg-container_desc svg, .browser-small__table thead tr .svg-container_asc svg {
+  color: var(--color-gradient-1);
+}
+
+.browser-small__table thead tr .svg-container_asc svg {
+  transform: rotate(180deg);
+}
+
+.browser-small__table thead tr .svg-container:hover {
+  cursor: pointer;
+  color: var(--color-gradient-2);
+}
+
+.browser-small__table thead tr th {
+  padding: 12px;
+  text-transform: uppercase;
+  color: grey;
+  border: none;
+  margin: 0;
+  user-select: none;
+}
+
+.browser-small__table thead tr th.--min-width {
+  width: 1px;
+}
+
+.browser-small__table thead tr th.--max-width-200 {
+  width: 200px;
+}
+
+.browser-small__table tbody {
+  color: black;
+}
+
+.browser-small__table tbody tr {
+  background-color: var(--color-1);
+  border-top: 1px solid var(--color-2);
+}
+
+.browser-small__table tbody tr.--disable-cursor, .browser-small__table tbody tr.--disable-cursor:hover {
+  cursor: default;
+}
+
+.browser-small__table tbody tr.--disable-hover:hover {
+  background-color: var(--color-1);
+}
+
+.browser-small__table tbody tr td {
+  font-family: "Roboto";
+  font-size: 13px;
+  padding: 12px;
+}
+
+.browser-small__table tbody tr td.--min-width {
+  width: 1px;
+}
+
+.browser-small__table tbody tr td div {
+  font-family: "Roboto";
+}
+
+.browser-small__table tbody tr:hover {
+  cursor: pointer;
+  background: var(--color-3);
+}

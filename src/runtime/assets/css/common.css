@@ -1,0 +1,99 @@
+#__layout {
+  width: 100%;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+div, button, label, li {
+  font-family: "FiraSansExtraCondensed";
+}
+
+a, input {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 10px 0;
+  font-family: "Roboto";
+  font-weight: normal;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+thead > tr > th {
+  font-family: "Roboto";
+  font-weight: normal;
+  font-size: 10px;
+}
+
+#__nuxt {
+  height: 100%;
+}
+
+.mr_10 {
+  margin-right: 10px;
+}
+
+.ml_10 {
+  margin-left: 10px;
+}
+
+.mt_10 {
+  margin-top: 10px;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 250ms;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  background: var(--color-1);
+  width: 100%;
+}
+
+.page__container {
+  padding: 20px 30px;
+  background: var(--page-container-background-color);
+  min-height: 100vh;
+}
+
+.page__title {
+  margin: 0;
+  color: grey;
+  font-size: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  user-select: none;
+  background: linear-gradient(to right, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
