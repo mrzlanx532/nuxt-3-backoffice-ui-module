@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { nextTick, type Ref } from 'vue'
 import { useNuxtApp } from '#imports'
-import mimeTypeMapper from 'mime-db'
+import * as mimeTypeMapper from 'mime-db'
 
 interface IComponentData {
   maxSizeMB: number|null,
