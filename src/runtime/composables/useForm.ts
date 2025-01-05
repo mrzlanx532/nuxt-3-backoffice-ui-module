@@ -7,6 +7,8 @@ import {
     type Ref,
     type ShallowRef,
     type VNode,
+    shallowRef,
+    reactive,
     ref
 } from 'vue'
 import { Types } from '#backoffice-ui/types'
