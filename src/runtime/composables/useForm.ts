@@ -8,6 +8,7 @@ import {
     type ShallowRef,
     type VNode,
 } from 'vue'
+import { Types } from '../types'
 import { defu } from 'defu'
 import { cloneDeep } from 'lodash-es'
 import { useNuxtApp } from '#imports'
@@ -109,17 +110,6 @@ const isFetchError = (instance): FetchError => {
   return instance.name === 'FetchError'
 }
 
-export interface defaultProps {
-    data: {
-        formResponse: {
-            entity?: { [key: string]: any }
-            [key: string]: any,
-        },
-        title: string,
-        id?: number
-    }
-}
-
 interface ITabWithFormData {
     title: string,
     formData: TFormDataItemOutput[]
@@ -127,7 +117,7 @@ interface ITabWithFormData {
     formClass?: string
 }
 
-type propsWithDefaultPropsType = DefineProps<LooseRequired<defaultProps>, never>
+type propsWithDefaultPropsType = DefineProps<LooseRequired<Types.Composables.useForm.IDefaultProps>, never>
 
 const isTabWithFormData = (item: ITabWithFormData | TFormDataItemOutput): item is ITabWithFormData => {
     return 'formData' in item

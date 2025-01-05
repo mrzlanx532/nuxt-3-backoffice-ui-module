@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-
-import type { defaultProps } from '../../../src/runtime/composables/useForm'
 import moment from 'moment'
+import { Types } from '../../../src/runtime/types'
 
-const props = defineProps<defaultProps>()
+const props = defineProps<Types.Composables.useForm.IDefaultProps>()
 
 const emit = defineEmits([
   'modal:resolve',
