@@ -4,7 +4,7 @@ import { nextTick, onMounted, onUnmounted, type Ref } from 'vue'
 import moment, { type Moment } from 'moment'
 import 'moment/dist/locale/ru'
 import { maskDatetime } from './mask'
-import Button from '../Button.vue'
+import Button from '#backoffice-ui/components/Button.vue'
 
 moment.locale('ru')
 

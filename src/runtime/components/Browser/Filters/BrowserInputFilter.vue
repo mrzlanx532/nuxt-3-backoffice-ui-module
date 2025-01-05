@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { IFilter } from '../Browser.vue'
+import type { IFilter } from '#backoffice-ui/components/Browser.vue'
 import type { Ref } from 'vue'
+
 type IValue = string | undefined
 
 const emit = defineEmits(['update:modelValue'])

@@ -1,4 +1,4 @@
-import ConfirmComponent from '../components/modal/presets/Confirm.vue'
+import ConfirmComponent from '#backoffice-ui/components/Modal/presets/Confirm.vue'
 import type { Component } from 'vue'
 import defu from 'defu'
 

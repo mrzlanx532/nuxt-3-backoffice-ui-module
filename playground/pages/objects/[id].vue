@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { definePageMeta, useRoute } from '#imports'
-import Button from '../../../src/runtime/components/base/Button.vue'
+import Button from '#backoffice-ui/components/Button.vue'
+import Detail from '#backoffice-ui/components/Detail.vue'
 import ObjectForm from '~/modals/objects/ObjectForm.vue'
-import Detail from '../../../src/runtime/components/base/Detail.vue'
 
 definePageMeta({
   middleware: ['auth']

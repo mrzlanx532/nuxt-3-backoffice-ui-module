@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { definePageMeta } from '#imports'
-import Button from '../../../src/runtime/components/base/Button.vue'
-import Browser from '../../../src/runtime/components/base/Browser/Browser.vue'
-import Picture from '../../../src/runtime/components/base/Browser/ColumnComponents/Picture.vue'
+import Button from '#backoffice-ui/components/Button.vue'
+import Browser from '#backoffice-ui/components/Browser.vue'
+import Picture from '#backoffice-ui/components/Browser/ColumnComponents/Picture.vue'
+import Section from '#backoffice-ui/components/Section.vue'
+import FlexTable from '#backoffice-ui/components/FlexTable.vue'
 import ObjectForm from '~/modals/objects/ObjectForm.vue'
-import Section from '../../../src/runtime/components/base/Section.vue'
-import FlexTable from '../../../src/runtime/components/base/FlexTable/FlexTable.vue'
 
 definePageMeta({
   middleware: ['auth']

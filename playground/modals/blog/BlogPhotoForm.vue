@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Form from '../../../src/runtime/components/base/Form.vue'
-import { useForm } from '../../../src/runtime/composables/useForm'
+import Form from '#backoffice-ui/components/Form.vue'
+import { useForm } from '#backoffice-ui/composables/useForm'
 import { FetchError } from 'ofetch'
 
 const props = defineProps<{

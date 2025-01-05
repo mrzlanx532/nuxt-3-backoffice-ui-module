@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import LoginInput from '../../src/runtime/components/pages/login/LoginInput.vue'
+import LoginInput from '#backoffice-ui/components/LoginInput.vue'
 import { definePageMeta, useNuxtApp } from '#imports'
 
 const errors: Ref<Record<string, never>> = ref({})

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Section from '../../../../src/runtime/components/base/Section.vue'
+import Section from '#backoffice-ui/components/Section.vue'
 
 interface IBlogPost {
   cover: {

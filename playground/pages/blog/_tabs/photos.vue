@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useNuxtApp } from '#imports'
 import { useTemplateRef } from 'vue'
-import BrowserSmall from '../../../../src/runtime/components/base/BrowserSmall/BrowserSmall.vue'
-import Button from '../../../../src/runtime/components/base/Button.vue'
-import BlogPhotosTr from '../../../components/CustomTr/BlogPhotosTr.vue'
-import BlogPhotoForm from '../../../modals/blog/BlogPhotoForm.vue'
+import BrowserSmall from '#backoffice-ui/components/BrowserSmall.vue'
+import Button from '#backoffice-ui/components/Button.vue'
+import BlogPhotosTr from '~/components/CustomTr/BlogPhotosTr.vue'
+import BlogPhotoForm from '~/modals/blog/BlogPhotoForm.vue'
 
 const props = defineProps<{
   item?: IItem,

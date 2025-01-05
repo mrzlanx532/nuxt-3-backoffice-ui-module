@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Section from '../../../../src/runtime/components/base/Section.vue'
-import FlexTable from '../../../../src/runtime/components/base/FlexTable/FlexTable.vue';
+import Section from '#backoffice-ui/components/Section.vue'
+import FlexTable from '#backoffice-ui/components/FlexTable.vue';
 
 type IItem = {[key: string]: any}
 

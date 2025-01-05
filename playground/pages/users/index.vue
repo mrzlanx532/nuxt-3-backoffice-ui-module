@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { definePageMeta } from '#imports'
 
-import Browser from '../../../src/runtime/components/base/Browser/Browser.vue';
-import Tabs from '../../../src/runtime/components/base/Tabs.vue';
-import Button from '../../../src/runtime/components/base/Button.vue';
-import MainTab from './_tabs/main.vue'
+import Browser from '#backoffice-ui/components/Browser.vue';
+import Tabs from '#backoffice-ui/components/Tabs.vue';
+import Button from '#backoffice-ui/components/Button.vue';
 import SubscriptionTab from './_tabs/subscription.vue'
-import Picture from '../../../src/runtime/components/base/Browser/ColumnComponents/Picture.vue'
-import UserForm from '../../modals/users/UserForm.vue'
+import Picture from '#backoffice-ui/components/Browser/ColumnComponents/Picture.vue'
+
+import UserForm from '~/modals/users/UserForm.vue'
+import MainTab from './_tabs/main.vue'
 
 definePageMeta({
   middleware: ['auth']

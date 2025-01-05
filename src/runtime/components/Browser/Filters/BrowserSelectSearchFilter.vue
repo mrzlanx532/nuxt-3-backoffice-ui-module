@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IFilter } from '../Browser.vue'
+import type { IFilter } from '#backoffice-ui/components/Browser.vue'
 import type { Ref } from 'vue'
 
 interface IOption {
@@ -8,7 +8,7 @@ interface IOption {
 }
 
 const props = defineProps<{
-  modelValue?: string[]|number[]|string|number,
+  modelValue?: any,
   filter: IFilter,
 }>()
 
@@ -18,8 +18,14 @@ const selectedItems: Ref<{[key: string]: IOption}> = ref({})
 const selectedId: Ref<string | number | undefined> = ref()
 const selectedTitle: Ref<string | undefined> = ref()
 const isSelecting = ref(false)
+const searchString = ref('')
+const filteredOptions: Ref<({
+  id: string
+  title: string
+}[])|undefined> = ref([])
 const inverseRender = ref(false)
 const topPxStyle = ref('0')
+const topPxStyleInput = ref('0')
 
 watch(
     () => props.modelValue,
@@ -60,7 +66,6 @@ watch(
       selectedId.value = value as string | number | undefined
 
       if (props.filter.options!.length && value instanceof Array) {
-
         props.filter.options!.map(option => {
           if (option.id === value[0]) {
             selectedTitle.value = option.title
@@ -81,6 +86,7 @@ watch(
 
 const selectDropdownEl = useTemplateRef<HTMLDivElement>('selectDropdownEl')
 const selectContainerEl = useTemplateRef<HTMLDivElement>('selectContainerEl')
+const inputEl = useTemplateRef<HTMLInputElement>('inputEl')
 
 const onDocumentVisibilityChange = () => {
   if (document.hidden) {
@@ -88,11 +94,40 @@ const onDocumentVisibilityChange = () => {
   }
 }
 
+const updateDimensions = (rect: DOMRect) => {
+
+  if (!isSelecting.value) {
+    return
+  }
+
+  if (window.innerHeight >= (rect.height + rect.top)) {
+    topPxStyle.value = '0'
+    topPxStyleInput.value = '0'
+    inverseRender.value = false
+    return
+  }
+
+  inverseRender.value = true
+  topPxStyle.value = ((selectDropdownEl.value!.offsetHeight + selectContainerEl.value!.offsetHeight + 30) * -1) + 'px'
+  topPxStyleInput.value = ((selectDropdownEl.value!.offsetHeight + selectContainerEl.value!.offsetHeight + 30) * -1) + 'px'
+}
+
 const onClickSelectedValue = () => {
+  searchString.value = ''
+
+  nextTick(() => {
+    nextTick(() => {
+      if (inputEl.value !== undefined) {
+        inputEl.value!.focus()
+      }
+    })
+  })
+
   isSelecting.value = !isSelecting.value
 }
 
 const onMouseDownOnDropdownOption = (filterName: string, option: IOption) => {
+
   if (props.filter.config.multiple) {
 
     selectedItems.value[option.id] ? delete selectedItems.value[option.id] : selectedItems.value[option.id] = option
@@ -130,6 +165,16 @@ const onCrossClick = (filterName: string) => {
 }
 
 watch(
+    searchString,
+    (newValue) => {
+      filteredOptions.value = props.filter.options
+      filteredOptions.value = filteredOptions.value!.filter((option: IOption) => {
+        return option.title.toLowerCase().includes(newValue.toLowerCase())
+      })
+    }
+)
+
+watch(
     isSelecting,
     () => {
       nextTick(() => {
@@ -144,20 +189,21 @@ watch(
         inverseRender.value = window.innerHeight < (rect.height + rect.top)
 
         const ro = new ResizeObserver(() => {
-          if (window.innerHeight >= (rect.height + rect.top)) {
-            topPxStyle.value = '0'
-            return
-          }
-
-          topPxStyle.value = ((rect.height + selectContainerEl.value!.offsetHeight) * -1) + 'px'
+          updateDimensions(rect)
         })
-
         ro.observe(selectContainerEl.value!, {})
+
+        const ro2 = new ResizeObserver(() => {
+          updateDimensions(rect)
+        })
+        ro2.observe(selectDropdownEl.value)
       })
     }
 )
 
 onMounted(() => {
+  filteredOptions.value = props.filter.options
+
   document.addEventListener('visibilitychange', onDocumentVisibilityChange)
 })
 
@@ -169,7 +215,7 @@ onUnmounted(() => {
 <template>
   <div class="browser__filter">
     <div :for="filter.id" class="browser__filter-name">{{ filter.title }}</div>
-    <div class="browser__filter-container select__container" tabindex="0" v-click-outside="onClickOutside">
+    <div class="browser__filter-container select__container" v-click-outside="onClickOutside">
       <div
           ref="selectContainerEl"
           class="select__selected-container"
@@ -213,25 +259,41 @@ onUnmounted(() => {
         ></div>
       </div>
       <div
+          class="select__search-input-container"
+          :style="{top: topPxStyleInput}"
+      >
+        <input
+            spellcheck="false"
+            autocomplete="off"
+            name="search"
+            v-show="isSelecting"
+            ref="inputEl"
+            type="text"
+            class="select__search-input select__search-input_open"
+            :class="{'--inverse': inverseRender}"
+            v-model="searchString"
+        >
+      </div>
+      <div
           v-if="isSelecting"
           class="select__dropdown-container"
           :style="{top: topPxStyle}"
       >
         <div
             ref="selectDropdownEl"
-            class="select__dropdown"
+            class="select__dropdown select__dropdown_select-search"
             :class="{'--inverse': inverseRender}"
             v-scrollable="{classes: ['--without-track', '--smart-opacity']}"
         >
-          <template v-if="props.filter.options!.length > 0">
+          <template v-if="filteredOptions!.length > 0">
             <div
-                v-for="option in props.filter.options"
+                v-for="(option, index) in filteredOptions"
                 class="select__dropdown-option"
                 :class="{'select__dropdown-option_selected': selectedItems[option.id]}"
-                @mouseup="onMouseDownOnDropdownOption(props.filter.id, option)"
+                @mouseup="onMouseDownOnDropdownOption(filter.id, option)"
             >{{ option.title }}</div>
           </template>
-          <div v-else class="select__dropdown-option select__dropdown-option_empty">Нет записей</div>
+          <div class="select__dropdown-option select__dropdown-option_empty" v-else>Нет записей</div>
         </div>
       </div>
     </div>

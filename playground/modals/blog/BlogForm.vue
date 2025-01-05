@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { useForm } from '../../../src/runtime/composables/useForm'
-import { Types } from '../../../src/runtime/types'
+import { useForm } from '#backoffice-ui/composables/useForm'
+import { Types } from '#backoffice-ui/types'
 
 const props = defineProps<Types.Composables.useForm.IDefaultProps>()
 

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { definePageMeta, useNuxtApp, useTabs, usePage } from '#imports'
-import Button from '../../../src/runtime/components/base/Button.vue'
-import Browser, { type IItem } from '../../../src/runtime/components/base/Browser/Browser.vue';
-import Badge from '../../../src/runtime/components/base/Browser/ColumnComponents/Badge.vue'
-import Picture from '../../../src/runtime/components/base/Browser/ColumnComponents/Picture.vue'
+import Button from '#backoffice-ui/components/Button.vue'
+import Browser, { type IItem } from '#backoffice-ui/components/Browser.vue'
+import Badge from '#backoffice-ui/components/Badge.vue'
+import Picture from '#backoffice-ui/components/Browser/ColumnComponents/Picture.vue'
+import Tabs from '#backoffice-ui/components/Tabs.vue'
 import MainTab from './_tabs/main.vue'
 import PhotosTab from './_tabs/photos.vue'
-import Tabs from '../../../src/runtime/components/base/Tabs.vue'
-import BlogForm from '../../modals/blog/BlogForm.vue'
+import BlogForm from '~/modals/blog/BlogForm.vue'
 
 definePageMeta({
   middleware: ['auth']

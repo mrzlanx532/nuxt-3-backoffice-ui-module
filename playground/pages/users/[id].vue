@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useRoute, usePage } from '#imports'
 
-import Detail from '../../../src/runtime/components/base/Detail.vue'
-import Button from '../../../src/runtime/components/base/Button.vue'
-import UserForm from '../../modals/users/UserForm.vue'
-import Badge from '../../../src/runtime/components/base/Browser/ColumnComponents/Badge.vue'
+import Detail from '#backoffice-ui/components/Detail.vue'
+import Button from '#backoffice-ui/components/Button.vue'
+import UserForm from '~/modals/users/UserForm.vue'
+import Badge from '#backoffice-ui/components/Browser/ColumnComponents/Badge.vue'
 
 const route = useRoute()
 

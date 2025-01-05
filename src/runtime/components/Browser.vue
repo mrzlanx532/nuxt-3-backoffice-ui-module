@@ -1,5 +1,5 @@
 <script lang="ts">
-export { type IItem, type IConfigItem } from '../../../composables/useBrowser'
+export { type IItem, type IConfigItem } from '#backoffice-ui/composables/useBrowser'
 
 export interface IBrowser {
   reset: (isUpdateItem?: boolean) => void,
@@ -45,21 +45,21 @@ import debounce from "lodash.debounce"
 import { useBrowser, useNuxtApp } from '#imports'
 import { FetchError } from 'ofetch'
 
-import BrowserSelectFilter from "./Filters/BrowserSelectFilter.vue"
-import BrowserSelectSearchFilter from "./Filters/BrowserSelectSearchFilter.vue"
-import BrowserInputFilter from "./Filters/BrowserInputFilter.vue"
-import BrowserDateFilter from "./Filters/BrowserDateFilter.vue"
-import BrowserBooleanFilter from "./Filters/BrowserBooleanFilter.vue"
-import BrowserDatetimeFilter from './Filters/BrowserDatetimeFilter.vue'
-import BrowserSearchString from "./BrowserSearchString.vue"
-import BrowserPagination from "./BrowserPagination.vue"
-import BrowserPaginationCountSelect from "./BrowserPaginationCountSelect.vue"
-import BrowserTHeadTh from "./BrowserTHeadTh.vue"
-import Spinner from "./../Spinner.vue"
-import BrowserDetail from "./BrowserDetail.vue"
-import { type IItem, type IConfigItem, type IColumn } from '../../../composables/useBrowser'
-import BrowserDetailBulkActions from './BrowserDetailBulkActions.vue'
-import BrowserCheckbox from './BrowserCheckbox.vue'
+import BrowserSelectFilter from "#backoffice-ui/components/Browser/Filters/BrowserSelectFilter.vue"
+import BrowserSelectSearchFilter from "#backoffice-ui/components/Browser/Filters/BrowserSelectSearchFilter.vue"
+import BrowserInputFilter from "#backoffice-ui/components/Browser/Filters/BrowserInputFilter.vue"
+import BrowserDateFilter from "#backoffice-ui/components/Browser/Filters/BrowserDateFilter.vue"
+import BrowserBooleanFilter from "#backoffice-ui/components/Browser/Filters/BrowserBooleanFilter.vue"
+import BrowserDatetimeFilter from '#backoffice-ui/components/Browser/Filters/BrowserDatetimeFilter.vue'
+import BrowserSearchString from "#backoffice-ui/components/Browser/BrowserSearchString.vue"
+import BrowserPagination from "#backoffice-ui/components/Browser/BrowserPagination.vue"
+import BrowserPaginationCountSelect from "#backoffice-ui/components/Browser/BrowserPaginationCountSelect.vue"
+import BrowserTHeadTh from "#backoffice-ui/components/Browser/BrowserTHeadTh.vue"
+import Spinner from "#backoffice-ui/components/Spinner.vue"
+import BrowserDetail from "#backoffice-ui/components/Browser/BrowserDetail.vue"
+import { type IItem, type IConfigItem, type IColumn } from '#backoffice-ui/composables/useBrowser'
+import BrowserDetailBulkActions from '#backoffice-ui/components/Browser/BrowserDetailBulkActions.vue'
+import BrowserCheckbox from '#backoffice-ui/components/Browser/BrowserCheckbox.vue'
 
 const {
   // Items

@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import 'moment/dist/locale/ru'
-import DatePicker from '../../base/Datepicker/DatePicker.vue'
-import type { IPayload } from '../../base/Datepicker/types'
+import DatetimePicker from '#backoffice-ui/components/Datepicker/DatetimePicker.vue'
+import type { IPayload } from '#backoffice-ui/components/Datepicker/types'
 
 const emit = defineEmits(['update:modelValue'])
 
 interface IComponentData {
   forceInverse?: boolean,
   format?: string,
-  disabled?: boolean
+  disabled?: boolean,
+  toUTC?: boolean
 }
 
 const props = defineProps<{
@@ -16,7 +17,7 @@ const props = defineProps<{
   name: string,
   modelValue?: number|string,
   errors?: string[],
-  componentData?: IComponentData
+  componentData?: IComponentData,
 }>()
 
 const onUpdateModelValue = (payload: IPayload) => {
@@ -27,12 +28,13 @@ const onUpdateModelValue = (payload: IPayload) => {
 <template>
   <div>
     <div class="label">{{ label }}</div>
-    <DatePicker
-        :modelValue="props.modelValue"
-        @update:modelValue="onUpdateModelValue"
+    <DatetimePicker
+        :model-value="props.modelValue"
+        @update:model-value="onUpdateModelValue"
         :force-inverse="props?.componentData?.forceInverse"
         :format="props?.componentData?.format"
         :disabled="props?.componentData?.disabled"
+        :to-u-t-c="props?.componentData?.toUTC"
         :errors="errors"
     />
     <div class="input__error">{{ errors && errors[0] ? errors[0] : null }}</div>

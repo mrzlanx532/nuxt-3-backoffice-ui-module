@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useNuxtApp } from '#imports'
-import ButtonDropdown from '../../../src/runtime/components/base/ButtonDropdown.vue'
+import ButtonDropdown from '#backoffice-ui/components/ButtonDropdown.vue'
 import BlogPhotoForm from '../../modals/blog/BlogPhotoForm.vue'
 
 type IItem = Record<string, any>

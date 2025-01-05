@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const emit = defineEmits(['changePage'])
 
-import BrowserPagination from '../Browser/BrowserPagination.vue'
+import BrowserPagination from '#backoffice-ui/components/Browser/BrowserPagination.vue'
 
 const props = withDefaults(defineProps<{
   total?: number,

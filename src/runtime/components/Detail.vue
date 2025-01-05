@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import BaseLink from '../base/BaseLink.vue'
-import { type IConfigItem, type IItem } from '../../composables/useBrowser'
+import BaseLink from '#backoffice-ui/components/BaseLink.vue'
+import { type IConfigItem, type IItem } from '#backoffice-ui/composables/useBrowser'
 import { type Component, toRaw } from 'vue'
-import { useBrowser } from '../../composables/useBrowser'
-import Badge from '../../../runtime/components/base/Badge.vue'
+import { useBrowser } from '#backoffice-ui/composables/useBrowser'
+import Badge from '#backoffice-ui/components/Badge.vue'
 
 const {
   isVueComponent,

@@ -1,16 +1,15 @@
 <script lang="ts">
-export { type IItem, type IConfigItem, type IColumn } from '../../../composables/useBrowser'
+export { type IItem, type IConfigItem, type IColumn } from '#backoffice-ui/composables/useBrowser'
 </script>
 
 <script setup lang="ts">
 import { type Component, type Ref, useSlots } from 'vue'
 import { FetchError } from 'ofetch'
 import { useNuxtApp, useBrowser } from '#imports'
-import Spinner from '~/components/Base/Spinner.vue'
-import BrowserTHeadTh from '../Browser/BrowserTHeadTh.vue'
-import BrowserSearchString from '../Browser/BrowserSearchString.vue'
-import BrowserPagination from '../BrowserSmall/BrowserPagination.vue'
-import { type IItem, type IConfigItem, type IColumn } from '../../../composables/useBrowser'
+import BrowserTHeadTh from '#backoffice-ui/components/Browser/BrowserTHeadTh.vue'
+import BrowserSearchString from '#backoffice-ui/components/Browser/BrowserSearchString.vue'
+import BrowserPagination from '#backoffice-ui/components/BrowserSmall/BrowserPagination.vue'
+import { type IItem, type IConfigItem, type IColumn } from '#backoffice-ui/composables/useBrowser'
 
 const {
   // Items

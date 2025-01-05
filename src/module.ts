@@ -1,10 +1,8 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponent, addImports } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addComponent, addImports, addImportsDir } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 import { type NitroConfig } from 'nitropack'
-import * as fs from 'node:fs/promises'
-import * as path from 'node:path'
 
-export * from './runtime/types'
+export type * from './runtime/types'
 
 export const enum Theme {
   DEFAULT = 'default',
@@ -27,6 +25,8 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(_options: ModuleOptions, nuxt: Nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
+    nuxt.options.alias['#backoffice-ui'] = resolve('./runtime')
+
     nuxt.hook('nitro:config', async (nitroConfig: NitroConfig) => {
 
       nitroConfig.publicAssets ||= []
@@ -39,9 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.push(resolve('./runtime/assets/css/style.css'))
     nuxt.options.css.push(resolve(`./runtime/assets/css/themes/${_options.theme}.css`))
 
-    nuxt.options.alias['#backoffice-ui-types'] = resolve('./runtime/types.ts')
-
-    await addImportsByFolderRecursively(resolve('./runtime/composables'))
+    await addImportsDir(resolve('./runtime/composables'))
 
     addPlugin(resolve('./runtime/plugins'))
     addPlugin(resolve('./runtime/plugins/wangEditor.client'))
@@ -53,53 +51,12 @@ export default defineNuxtModule<ModuleOptions>({
 
     await addComponent({
       name: 'Modal',
-      filePath: resolve('./runtime/components/modal/Modal.vue'),
+      filePath: resolve('./runtime/components/Modal.vue'),
     })
 
     await addComponent({
       name: 'SideMenu',
-      filePath: resolve('./runtime/components/base/SideMenu.vue'),
+      filePath: resolve('./runtime/components/SideMenu.vue'),
     })
   },
 })
-
-async function addImportsByFolderRecursively(folderPath: string) {
-  const files = await getFilesRecursively(folderPath)
-
-  for (const file of files) {
-
-    const filename = path.parse(file).name
-
-    await addImports({
-      name: filename,
-      as: filename,
-      from: file
-    })
-  }
-}
-
-async function getFilesRecursively(dir: string): Promise<string[]> {
-  let files: string[] = [];
-
-  try {
-    const entries = await fs.readdir(dir, { withFileTypes: true });
-
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-
-      if (entry.isDirectory()) {
-        const subFiles = await getFilesRecursively(fullPath);
-        files = files.concat(subFiles);
-
-      } else if (entry.isFile()) {
-        files.push(fullPath);
-      }
-    }
-
-    return files
-
-  } catch(error) {
-    console.error("Failed to read directory:", error);
-    return [];
-  }
-}

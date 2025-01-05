@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type IColumn } from '../../../composables/useBrowser'
+import { type IColumn } from '#backoffice-ui/composables/useBrowser'
 
 const emit = defineEmits(['sortChanged'])
 
