@@ -9,6 +9,7 @@ import {
     type VNode,
     shallowRef,
     reactive,
+    toRaw,
     ref
 } from 'vue'
 import { Types } from '#backoffice-ui/types'
