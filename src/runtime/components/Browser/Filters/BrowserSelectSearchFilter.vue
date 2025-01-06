@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IFilter } from '#backoffice-ui/components/Browser.vue'
-import { type Ref, ref, watch, onMounted, onUnmounted, useTemplateRef } from 'vue'
+import { type Ref, ref, watch, onMounted, onUnmounted, useTemplateRef, nextTick } from 'vue'
 
 interface IOption {
   id: number|string,
