@@ -40,8 +40,7 @@ export interface IFilter {
 
 <script setup lang="ts">
 import { type Ref, type Component, useSlots, ref, onMounted } from "vue";
-import type { DebouncedFunc } from "lodash-es"
-import debounce from "lodash.debounce"
+import { type DebouncedFunc, debounce } from "lodash-es"
 import { useBrowser, useNuxtApp, useRoute, useRouter } from '#imports'
 import { FetchError } from 'ofetch'
 
