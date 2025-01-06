@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import moment from 'moment/moment'
+import moment from 'moment'
 
 export type IItem = {[key: string]: any}
 
