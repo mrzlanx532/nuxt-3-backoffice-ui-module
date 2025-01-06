@@ -42,7 +42,7 @@ export interface IFilter {
 import { type Ref, type Component, useSlots, ref, onMounted } from "vue";
 import type { DebouncedFunc } from "lodash-es"
 import debounce from "lodash.debounce"
-import { useBrowser, useNuxtApp } from '#imports'
+import { useBrowser, useNuxtApp, useRoute, useRouter } from '#imports'
 import { FetchError } from 'ofetch'
 
 import BrowserSelectFilter from "#backoffice-ui/components/Browser/Filters/BrowserSelectFilter.vue"
