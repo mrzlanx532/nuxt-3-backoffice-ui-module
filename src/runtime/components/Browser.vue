@@ -39,7 +39,7 @@ export interface IFilter {
 </script>
 
 <script setup lang="ts">
-import { type Ref, type Component, useSlots, ref, onMounted } from "vue";
+import { type Ref, type Component, useSlots, ref, onMounted, computed} from "vue";
 import { type DebouncedFunc, debounce } from "lodash-es"
 import { useBrowser, useNuxtApp, useRoute, useRouter } from '#imports'
 import { FetchError } from 'ofetch'

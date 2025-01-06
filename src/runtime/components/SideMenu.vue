@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouter, useNuxtApp } from '#imports'
 import { type Ref, useTemplateRef, ref, onMounted, onUnmounted } from 'vue'
 
 interface IAuthorizedUser {
