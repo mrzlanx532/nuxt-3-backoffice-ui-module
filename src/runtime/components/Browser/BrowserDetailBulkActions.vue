@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type Component, useSlots, ref, computed } from 'vue'
-import type { IConfigItem } from '#backoffice-ui/composables/useBrowser'
+import { type IConfigItem, useBrowser } from '#backoffice-ui/composables/useBrowser'
 import BrowserCheckbox from '#backoffice-ui/components/Browser/BrowserCheckbox.vue'
 
 const {
