@@ -4,7 +4,7 @@ import { type NitroConfig } from 'nitropack'
 
 export type * from './runtime/types'
 
-export const enum Theme {
+export enum Theme {
   DEFAULT = 'default',
   ALT1 = 'alt1',
   ALT2 = 'alt2',
