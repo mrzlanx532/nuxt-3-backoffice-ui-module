@@ -1,17 +1,11 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponent, addImports, addImportsDir } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addComponent, addImportsDir } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 import { type NitroConfig } from 'nitropack'
 
 export type * from './runtime/types'
 
-export enum Theme {
-  DEFAULT = 'default',
-  ALT1 = 'alt1',
-  ALT2 = 'alt2',
-}
-
 export interface ModuleOptions {
-  theme: Theme
+  theme: 'default' | 'alt1' | 'alt2'
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -20,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'backofficeUI',
   },
   defaults: {
-    theme: Theme.DEFAULT
+    theme: 'default'
   },
   async setup(_options: ModuleOptions, nuxt: Nuxt) {
     const { resolve } = createResolver(import.meta.url)
