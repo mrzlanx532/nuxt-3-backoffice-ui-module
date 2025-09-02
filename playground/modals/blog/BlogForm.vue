@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useForm } from '#backoffice-ui/composables/useForm'
-import { Types } from '#backoffice-ui/types'
+import { type IUseFormDefaultProps } from '#backoffice-ui/types'
 
-const props = defineProps<Types.Composables.useForm.IDefaultProps>()
+const props = defineProps<IUseFormDefaultProps>()
 
 const emit = defineEmits([
     'modal:resolve',

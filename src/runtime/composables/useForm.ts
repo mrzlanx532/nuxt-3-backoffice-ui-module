@@ -12,7 +12,7 @@ import {
     toRaw,
     ref
 } from 'vue'
-import { Types } from '#backoffice-ui/types'
+import { type IUseFormDefaultProps } from '#backoffice-ui/types'
 import { defu } from 'defu'
 import { cloneDeep } from 'lodash-es'
 import { useNuxtApp } from '#imports'
@@ -121,7 +121,7 @@ interface ITabWithFormData {
     formClass?: string
 }
 
-type propsWithDefaultPropsType = DefineProps<LooseRequired<Types.Composables.useForm.IDefaultProps>, never>
+type propsWithDefaultPropsType = DefineProps<LooseRequired<IUseFormDefaultProps>, never>
 
 const isTabWithFormData = (item: ITabWithFormData | TFormDataItemOutput): item is ITabWithFormData => {
     return 'formData' in item

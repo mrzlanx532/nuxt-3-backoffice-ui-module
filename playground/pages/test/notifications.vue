@@ -40,10 +40,6 @@ const onShowAll = () => {
     $notification.push(notification)
   })
 }
-
-definePageMeta({
-  layout: 'default',
-})
 </script>
 
 <template>
