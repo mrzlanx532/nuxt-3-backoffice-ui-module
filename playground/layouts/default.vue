@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 import { SideMenu } from '#components'
 import { useNuxtApp } from '#imports'
 
@@ -53,7 +54,7 @@ const user = ref({
 </script>
 
 <template>
-  <div id="app">
+  <OverlayScrollbarsComponent class="main-custom-scroll">
     <div class="container">
       <SideMenu :items="items" :user="user">
         <div class="img-container">
@@ -69,7 +70,7 @@ const user = ref({
     </div>
     <Modal />
     <Notification />
-  </div>
+  </OverlayScrollbarsComponent>
 </template>
 
 <style scoped>

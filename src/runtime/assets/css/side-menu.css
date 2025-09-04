@@ -1,13 +1,14 @@
 .side-menu {
-  width: 240px;
+  width: var(--side-menu-width, 240px);
   height: 100vh;
   background-color: var(--side-menu-background-color);
   -webkit-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
   box-shadow: var(--main-box-shadow);
   z-index: 1;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
 }
 .side-menu .--without-icon {
   margin-left: 24px;
@@ -70,12 +71,9 @@
 .side-menu__sub-sections-list {
   background: var(--side-menu-sub-section-list-background-color);
   max-height: 0;
-  transition-property: max-height;
-  transition-duration: 1.5s;
   position: relative;
-  visibility: collapse;
-  overflow-y: hidden;
   will-change: max-height;
+  overflow-y: hidden;
 }
 .side-menu__sub-sections-list_open {
   max-height: 100vh;
@@ -118,7 +116,9 @@
   display: block;
 }
 .side-menu__sections {
-  overflow-y: auto;
+  height: 0;
+  opacity: 0;
+  transition: opacity .3s;
 }
 .side-menu__sections-list-item {
   background: var(--side-menu-background-color);
@@ -175,4 +175,17 @@
 }
 .side-menu__sections-list-item-arrow_rotated::after {
   transform: rotate(180deg);
+}
+.side-menu__custom-scroll {
+  width: 100%;
+}
+.side-menu__custom-scroll>.os-scrollbar {
+  padding: 0 7px 0 0;
+}
+.side-menu__custom-scroll>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+  background: linear-gradient(to bottom, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
+}
+.side-menu__custom-scroll>.os-scrollbar.os-scrollbar-vertical {
+  left: 0;
+  right: auto;
 }

@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, onNuxtReady } from '#imports'
+import { defineNuxtPlugin } from '#imports'
 
 import NotificationManager from './classes/notification'
 import ModalManager from './classes/modal'
@@ -8,9 +8,8 @@ import { vMaska } from 'maska'
 
 import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/common.css'
 import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/v-scrollable.css'
-import '@mrzlanx532/nuxt-3-custom-scroll-plugin/dist/css/document-scroll.no-ssr.css'
 
-import { Scrollable, DocumentScroll } from '@mrzlanx532/nuxt-3-custom-scroll-plugin'
+import { Scrollable } from '@mrzlanx532/nuxt-3-custom-scroll-plugin'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(vClickOutside)
@@ -21,18 +20,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
     unmounted: function (el) {
       el.scrollable_manager.destroy()
-    }
-  })
-
-  onNuxtReady(async () => {
-    window.documentScroll = new DocumentScroll
-
-    try {
-      new ResizeObserver(() => {
-        window.documentScroll.updateScroll()
-      }).observe(document.documentElement)
-    } catch (e) {
-      console.warn('Не удалось установить ResizeObserver для document')
     }
   })
 

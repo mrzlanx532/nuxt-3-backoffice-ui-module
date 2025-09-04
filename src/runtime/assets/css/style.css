@@ -1,3 +1,5 @@
+@import 'overlayscrollbars/styles/overlayscrollbars.css';
+
 @import 'variables.css';
 @import 'fonts.css';
 @import 'normalize.css';
@@ -24,3 +26,18 @@
 @import 'browser-detail.css';
 @import 'browser-small.css';
 @import 'browser.css';
+
+.main-custom-scroll {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  >.os-scrollbar {
+    padding: 1px 1px 1px 3px;
+    >.os-scrollbar-track {
+      >.os-scrollbar-handle {
+        background: linear-gradient(to bottom, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
+      }
+    }
+  }
+}
