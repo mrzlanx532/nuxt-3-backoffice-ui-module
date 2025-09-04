@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { watch, ref, onMounted, getCurrentInstance, shallowRef, useTemplateRef } from 'vue'
 import { useNuxtApp } from '#imports'
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 
 const emit = defineEmits(['modal:close'])
 
@@ -35,7 +36,8 @@ watch(component, (_component) => {
 })
 
 const closeModal = () => {
-  modalContainerEl.value.scrollable_manager.scrollToDefault()
+  const os = modalContainerEl.value?.osInstance()
+  os.elements().content.scrollTop = 0
 
   component.value = null
   emit('modal:close')
@@ -71,7 +73,7 @@ const updateModalDimensions = () => {
   modalEl.value.style.height = document.documentElement.clientHeight + 'px'
   modalEl.value.style.width = document.documentElement.clientWidth + 'px'
 
-  modalContainerEl.value.style.maxHeight = document.documentElement.clientHeight - 40 + 'px'
+  modalContainerEl.value.getElement().style.maxHeight = document.documentElement.clientHeight - 40 + 'px'
 }
 
 onMounted(() => {
@@ -100,11 +102,10 @@ onMounted(() => {
             @click="onOverlayClick"
           />
         </Transition>
-        <div
+        <OverlayScrollbarsComponent
           v-show="component"
           ref="modalContainerEl"
           :class="['modal__container', modalContainerClass]"
-          v-scrollable="{inheritanceDimensions: true}"
         >
           <component
             :is="component"
@@ -113,7 +114,7 @@ onMounted(() => {
             @modal:resolve="onResolve"
             @modal:reject="onReject"
           />
-        </div>
+        </OverlayScrollbarsComponent>
       </div>
   </teleport>
 </template>

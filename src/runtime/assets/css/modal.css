@@ -32,6 +32,12 @@
   overflow-y: auto;
   border-radius: 5px;
 }
+.modal__container>.os-scrollbar {
+  padding: 0 0 0 6px;
+}
+.modal__container>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+  background: var(--scrollable-slider-background);
+}
 .modal__container.--small {
   max-width: 300px;
 }

@@ -99,3 +99,21 @@ thead > tr > th {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.main-custom-scroll {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main-custom-scroll>.os-scrollbar {
+  padding: 0 0 0 4px;
+}
+
+.main-custom-scroll>.os-scrollbar>.os-scrollbar-track {
+  background: var(--document-scroll-track-background);
+}
+
+.main-custom-scroll>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+  background: var(--document-scroll-background);
+}
