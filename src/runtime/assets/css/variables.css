@@ -19,7 +19,7 @@
   --document-scroll-border-radius: 5px;
   --document-scroll-thickness: 4px;
   --document-scroll-thickness-hover-active: 8px;
-  //--document-scroll-background: linear-gradient(to bottom, #DE4020 0%, orange 100%);
+  /* --document-scroll-background: linear-gradient(to bottom, #DE4020 0%, orange 100%); */
 
   --document-scroll-track-background: #dbdbdb;
   --document-scroll-track-border-radius: 5px;
@@ -28,7 +28,7 @@
   --scrollable-border-radius: 5px;
   --scrollable-thickness: 4px;
   --scrollable-track-background: #dbdbdb;
-  //--scrollable-slider-background: linear-gradient(to bottom, #DE4020 0%, orange 100%);
+  /* --scrollable-slider-background: linear-gradient(to bottom, #DE4020 0%, orange 100%); */
 
   /* Buttons */
   --default-btn-border: #9d9d9d;
