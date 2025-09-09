@@ -526,7 +526,7 @@ export const useForm = () => {
                     return
                 }
 
-                if (typeof value === 'string' && value === 'null') {
+                if (value === null) {
                   value = '__null__'
                 }
 
