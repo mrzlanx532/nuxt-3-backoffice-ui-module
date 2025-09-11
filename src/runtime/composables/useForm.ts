@@ -15,7 +15,7 @@ import {
 import { type IUseFormDefaultProps } from '#backoffice-ui/types'
 import { defu } from 'defu'
 import { cloneDeep } from 'lodash-es'
-import { useNuxtApp } from '#imports'
+import { type IItem, useNuxtApp } from '#imports'
 import { FetchError } from 'ofetch'
 import type { LooseRequired } from '@vue/shared'
 import FormSelect from '#backoffice-ui/components/Form/Select.vue'
@@ -133,6 +133,7 @@ export const useForm = () => {
         createURL: string,
         updateURL: string,
         tabsWithFormData: ITabWithFormData[],
+        beforeBuildFormRequestBody?: (IItem) => IItem,
     ) => {
         const {$authFetch} = useNuxtApp()
 
@@ -155,7 +156,7 @@ export const useForm = () => {
             props: propsWithDefaultPropsType,
             emit: (event: ("modal:resolve" | "modal:close"), ...args: any[]) => void
         ) => {
-            let requestBody = formRequestBody(formDataValues, props.data.id)
+            let requestBody = formRequestBody(formDataValues, props.data.id, beforeBuildFormRequestBody)
 
             const URL = props.data.id ? updateURL : createURL
 
@@ -344,7 +345,8 @@ export const useForm = () => {
         createURL: string,
         updateURL: string,
         formData: TFormDataItemOutput[],
-        formClass?: string
+        formClass?: string,
+        beforeBuildFormRequestBody?: (IItem) => IItem,
     ) => {
         const {$authFetch} = useNuxtApp()
 
@@ -355,7 +357,7 @@ export const useForm = () => {
             props: propsWithDefaultPropsType,
             emit: (event: ("modal:resolve" | "modal:close"), ...args: any[]) => void
         ) => {
-            let requestBody = formRequestBody(formDataValues, props.data.id)
+            let requestBody = formRequestBody(formDataValues, props.data.id, beforeBuildFormRequestBody)
 
             const URL = props.data.id ? updateURL : createURL
 
@@ -493,9 +495,9 @@ export const useForm = () => {
         return reactive(preparedFormDataValues)
     }
 
-    const formRequestBody = (formDataValues: IItem, id: number | undefined = undefined): IItem | FormData => {
+    const formRequestBody = (formDataValues: IItem, id: number | undefined = undefined, beforeBuildFormRequestBody?: (item: IItem) => IItem): IItem | FormData => {
 
-        const _formDataValues = cloneDeep(formDataValues)
+        const _formDataValues = beforeBuildFormRequestBody ? beforeBuildFormRequestBody(cloneDeep(formDataValues)) : cloneDeep(formDataValues)
 
         let isRequiredFormData = false
 
