@@ -158,8 +158,8 @@ const onClick = () => {
             <p class="input-file__label input-file__label_max-size"><span>{{ componentData?.maxSizeMB ? componentData.maxSizeMB + 'MB' : 'не ограничен' }}</span></p>
           </div>
           <div class="input-file__btn-group">
-              <button class="btn --special --small" @click="onClick">Обновить файл</button>
-              <button class="btn --outline-contrast-danger --small" @click="onRemove">Убрать</button>
+              <button class="btn --special --small" @click="onClick" type="button">Обновить файл</button>
+              <button class="btn --outline-contrast-danger --small" @click="onRemove" type="button">Убрать</button>
           </div>
         </div>
       </template>
