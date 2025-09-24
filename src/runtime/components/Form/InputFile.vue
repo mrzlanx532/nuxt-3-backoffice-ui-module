@@ -164,7 +164,7 @@ const onClick = () => {
         </div>
       </template>
       <div class="input-file__input"
-           @keydown.enter="onClick"
+           @keydown.enter.prevent="onClick"
            tabindex="0"
            v-else
            @click="onClick"
