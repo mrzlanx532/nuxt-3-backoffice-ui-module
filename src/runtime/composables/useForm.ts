@@ -534,6 +534,10 @@ export const useForm = () => {
                     return
                 }
 
+                if (value === null) {
+                  value = '__null__'
+                }
+
                 formData.append(key, value)
             })
 
