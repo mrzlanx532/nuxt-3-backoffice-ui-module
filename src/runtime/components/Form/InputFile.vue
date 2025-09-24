@@ -119,6 +119,7 @@ const onClick = () => {
 
   inputFile.type = 'file'
   inputFile.click()
+  inputFile.remove()
 }
 </script>
 
@@ -163,7 +164,7 @@ const onClick = () => {
         </div>
       </template>
       <div class="input-file__input"
-           @keyup.enter="onClick"
+           @keydown.enter="onClick"
            tabindex="0"
            v-else
            @click="onClick"
