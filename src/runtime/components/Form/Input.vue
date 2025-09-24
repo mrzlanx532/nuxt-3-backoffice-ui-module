@@ -9,7 +9,7 @@ interface IComponentData {
   isForceInverse?: boolean
   isFilterable?: boolean,
   isRemovable?: boolean,
-  type?: 'text' | 'password',
+  type?: 'text' | 'password' | 'number',
   disabled?: boolean,
   mask?: string,
   description?: string
@@ -18,7 +18,7 @@ interface IComponentData {
 const props = defineProps<{
   label: string,
   name: string,
-  modelValue?: string,
+  modelValue?: string | number,
   errors?: string[],
   componentData: IComponentData
 }>()
