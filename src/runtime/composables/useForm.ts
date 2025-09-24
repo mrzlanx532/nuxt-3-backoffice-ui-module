@@ -288,6 +288,10 @@ export const useForm = () => {
                     return () => {
                         return h(Form, {
                             title: props.data.title,
+                            onSubmit: (e) => {
+                              e.preventDefault()
+                              void onClickSave(props, emit)
+                            },
                             onClose: () => {
                                 emit('modal:close')
                             }
@@ -434,6 +438,10 @@ export const useForm = () => {
 
                         return h(Form, {
                             title: props.data.title,
+                            onSubmit: (e) => {
+                              e.preventDefault()
+                              void onClickSave(props, emit)
+                            },
                             onClose: () => {
                                 emit('modal:close')
                             }
